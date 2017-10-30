@@ -1,0 +1,16 @@
+{
+  "env": {
+    "node": {
+      "presets": ["latest", "es2017", "stage-3"],
+      "ignore": []
+    }
+  },
+	"presets": ["latest", "es2017"],
+  "ignore": [],
+  "plugins": [
+    ["transform-runtime", {
+      "polyfill": false,
+      "regenerator": true
+    }]
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "name": "core-script",
+  "version": "1.0.13",
+  "description": "",
+  "main": "lib/index.js",
+  "engine": {
+    "node": ">=5.1"
+  },
+  "scripts": {
+    "reset": "npm run build && npm run publish:patch",
+    "start": "npm run build:watch",
+    "build": "npm run clean && babel src -d lib",
+    "build:watch": "babel src --watch -d lib",
+    "clean": "rimraf lib",
+    "publish:patch": "npm version patch && npm publish",
+    "publish:minor": "npm version minor && npm publish",
+    "dot": "NODE_ENV=node babel-node src/cli/xmind-ui.js"
+  },
+  "author": "kunsam",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "commander": "^2.11.0",
+    "fs-extra": "^4.0.2",
+    "lodash": "^4.17.4",
+    "rimraf": "^2.6.2",
+    "shelljs": "^0.7.8",
+    "xmind": "^0.5.0"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2017": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1"
+  },
+  "bin": {
+    "CORE": "bin/core.js",
+    "CORE-xui": "bin/core-xui.js",
+    "CORE-xmind-ui": "bin/core-xui.js"
+  }
+}
