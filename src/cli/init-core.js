@@ -5,6 +5,10 @@ const path = require('path')
 import configStr from '../init.core.config'
 import config from '../config'
 
-
-fs.writeFileSync(path.join(config.basePath, 'core.config.js'), configStr)
-console.log('>>> 初始化成功！');
+const configFilePath = path.join(config.basePath, 'core.config.js')
+if (!fs.existsSync(configFilePath)) {
+  fs.writeFileSync(configFilePath, configStr)
+  console.log('>>> 初始化成功！')
+} else {
+  console.log('>>> 配置文件已存在！')
+}

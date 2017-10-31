@@ -10,11 +10,11 @@ export default {
     plan: {
       path: 'xmind/develop_model.xmind',
 
-      // output: { // 默认为读取路径/plan-output
+      // output: { 
         // 用于工作流管理后台
-        // data: 'xmind/data/projectModel.json',
-        // projectMarkDown: 'xmind/data/projectMarkDown.md',
-        // workflowsMarkDown: 'xmind/data/workflowsMarkDown.md',
+        // data: 'xmind/data/projectModel.json', // 默认为读取路径/data/
+        // projectMarkDown: 'xmind/data/projectMarkDown.md', // 默认为读取路径/plan-output
+        // workflowsMarkDown: 'xmind/data/workflowsMarkDown.md', // 默认为读取路径/plan-output
       // }
 
     }
