@@ -45,6 +45,7 @@
     "CORE-recompose": "bin/core-recompose.js",
     "CORE-rcp": "bin/core-recompose.js",
     "CORE-init-project": "bin/core-init-project.js",
-    "CORE-app-expand": "bin/core-app-expand.js"
+    "CORE-app-expand": "bin/core-app-expand.js",
+    "CORE-exp": "bin/core-app-expand.js"
   }
 }

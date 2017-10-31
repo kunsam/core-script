@@ -15,5 +15,8 @@ commander
   .command('xplan', 'alias for xmind-plan')
   .command('recompose', 'use recompose faster')
   .command('rcp', 'alias for recompose')
+  .command('app-expand', 'expand a app busniess')
+  .command('exp', 'alias for app-expand')
+
 
 commander.parse(process.argv);
