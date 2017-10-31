@@ -5,7 +5,7 @@
       "ignore": []
     }
   },
-	"presets": ["latest", "es2017"],
+	"presets": ["latest", "es2017", "stage-3"],
   "ignore": [],
   "plugins": [
     ["transform-runtime", {
