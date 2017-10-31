@@ -32,7 +32,8 @@ const target = list[firstIndex] && list[firstIndex].children[childIndex]
 if (!target) {
   console.log(chalk.red('未输入或输入错误!'))
 } else {
-  if (fs.existsSync(path.join(__dirname, `../recompose/use/${target.key}`))) {
+  const targetPath = path.join(__dirname, `../recompose/use/${target.key}.js`)
+  if (fs.existsSync(targetPath)) {
     const generate = require(`../recompose/use/${target.key}`).default
     if (target.key === 'withState') {
       const stateKey = readlineSync.question('输入state的名称: ')

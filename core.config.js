@@ -8,7 +8,7 @@ module.exports = {
       // output: 'xmind/ui' // 不配置的话默认同xmind读取路径
     },
     plan: {
-      path: 'xmind/develop_model.xmind',
+      path: 'xmind/develop_model2.xmind',
 
       // output: { 
         // 用于工作流管理后台

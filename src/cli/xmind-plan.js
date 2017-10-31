@@ -25,6 +25,9 @@ const { timeField, seriesTime, workflowModel, specialSymbolMap, difficultyField 
 if (!xmind.plan.path) throw Error('请配置 xmind.plan.path ')
 
 const sourcePath = path.join(basePath, xmind.plan.path)
+
+if (!fs.existsSync(sourcePath)) throw Error(`[${sourcePath}] 配置路径不存在，请确认xmind.plan.path`)
+
 const outputConfig = xmind.plan.output || {
   data: 'data/projectModelData.json',
   projectMarkDown: 'plan-output/projectMarkDown.md',
@@ -100,8 +103,11 @@ const workflowsMarkDown = createWorkflowMarkDown(allWorkflow)
 
 fs.ensureFileSync(outputPath.projectMarkDown)
 fs.writeFileSync(outputPath.projectMarkDown, projectMarkDown)
+console.log(chalk.yellow(`>>> 成功导出 ${outputPath.projectMarkDown}`))
 fs.ensureFileSync(outputPath.workflowsMarkDown)
 fs.writeFileSync(outputPath.workflowsMarkDown, workflowsMarkDown)
+console.log(chalk.yellow(`>>> 成功导出 ${outputPath.workflowsMarkDown}`))
 // 输出projectModelData数据
 fs.ensureFileSync(outputPath.data)
 fs.writeFileSync(outputPath.data, `${JSON.stringify(projectModelData, null, 2)}`)
+console.log(chalk.yellow(`>>> 成功导出 ${outputPath.data}`))

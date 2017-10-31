@@ -25,7 +25,7 @@ if (!xmind.ui.path) throw Error('请配置 xmind.ui.path ')
 const sourcePath = path.join(basePath, xmind.ui.path)
 const outputPath = path.join(basePath, xmind.ui.output || xmind.ui.path)
 
-// console.log(sourcePath, outputPath, 'sourcePath')
+if (!fs.existsSync(sourcePath)) throw Error(`[${sourcePath}] 配置路径不存在，请确认xmind.ui.path`)
 
 const uiFiles = fs.readdirSync(sourcePath).filter(f => /\.xmind/.test(f))
 

@@ -32,6 +32,14 @@ export function getPageWorkflow(instances, workflowModel) {
 
     const validTime = (time) => !!(time && time.min && time.max && time.expect)
     const removeSpecialFlows = flows.filter(f => validTime(f.time))
+    if (!removeSpecialFlows.length) {
+      return {
+        flows: [],
+        difficulty,
+        schedule: null,
+        specialFlows: flows
+      }
+    }
     let expect = null
     const minSchedule = removeSpecialFlows.map(f => f.time.min).reduce((p, a) => (p + a))
     const maxSchedule = removeSpecialFlows.map(f => f.time.max).reduce((p, a) => (p + a))
