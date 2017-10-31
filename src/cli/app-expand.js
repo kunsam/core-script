@@ -14,7 +14,8 @@ import { getFilesTree, joinFiles } from '../utils/file'
 import config from '../config'
 const { basePath } = config
 
-const joinedFiles = joinFiles(getFilesTree(path.join(__dirname, '../../../pages')))
+const joinedFiles = joinFiles(getFilesTree(path.join(basePath, 'pages')))
+
   .map(file => file.fullImportPath).filter(file => file.split('/').length > 1)
 
 console.log('可展开的app有:')

@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/init-core.js"
+    "dot": "NODE_ENV=node babel-node src/cli/xmind-ui.js"
   },
   "author": "kunsam",
   "license": "MIT",

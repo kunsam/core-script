@@ -17,7 +17,7 @@ const { basePath } = config
 
 const userConfigPath = path.join(basePath, 'core.config.js')
 if (!fs.existsSync(userConfigPath)) throw Error('请在项目根路径下配置core.config.js 或使用 init-core')
-const userConfig = require(userConfigPath).default
+const userConfig = require(userConfigPath)
 const { xmind } = userConfig
 
 const { timeField, seriesTime, workflowModel, specialSymbolMap, difficultyField } = xmindConfig

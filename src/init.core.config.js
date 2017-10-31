@@ -1,7 +1,7 @@
 export default `
 // 以下路径配置是相对与项目根路径的配置
 
-export default {
+module.exports = {
   xmind: {
     ui: {
       path: 'xmind/ui',
