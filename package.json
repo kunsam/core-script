@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/xmind-ui.js"
+    "dot": "NODE_ENV=node babel-node src/cli/xmind-plan.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -35,7 +35,9 @@
   },
   "bin": {
     "CORE": "bin/core.js",
-    "CORE-xui": "bin/core-xui.js",
-    "CORE-xmind-ui": "bin/core-xui.js"
+    "CORE-xui": "bin/core-xmind-ui.js",
+    "CORE-xmind-ui": "bin/core-xmind-ui.js",
+    "CORE-xplan": "bin/core-xmind-plan.js",
+    "CORE-xmind-plan": "bin/core-xmind-plan.js"
   }
 }

@@ -4,7 +4,7 @@ const upperFirst = require('lodash/upperFirst')
 
 import cssPresets from '../../css'
 
-import getXmindRootDom from '../getXmindRootDom'
+import getXmindRootDom from '../src/getXmindRootDom'
 
 import { getIntentStr } from '../../utils/indent'
 

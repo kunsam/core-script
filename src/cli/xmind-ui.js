@@ -1,8 +1,4 @@
 
-
-
-import commander from 'commander';
-
 const fs = require('fs-extra')
 const path = require('path')
 const chalk = require('chalk')
@@ -11,17 +7,23 @@ import loggerList from '../utils/loggerList'
 import getUI from '../xmind/ui/generateUi'
 
 import config from '../config'
-const { basePath, xmind } = config
+const { basePath } = config
+
+const userConfigPath = path.join(basePath, 'core.config.js')
+if (!fs.existsSync(userConfigPath)) throw Error('请在项目根路径下配置core.config.js')
+const userConfig = require(userConfigPath).default
+
+const { xmind } = userConfig
 
 // projectRootPath: config.basePath
 console.log(chalk.yellow('>>>友情提示：执行命令的路径必须为项目的根路径，否则会存在路径错误\n'))
 
 // console.log(xmind, basePath, 'config');
 
-if (!xmind.ui.path) throw Error('请配置 xmind.ui ')
+if (!xmind.ui.path) throw Error('请配置 xmind.ui.path ')
 
 const sourcePath = path.join(basePath, xmind.ui.path)
-const outputPath = path.join(basePath, xmind.ui.outputPath || xmind.ui.path)
+const outputPath = path.join(basePath, xmind.ui.output || xmind.ui.path)
 
 // console.log(sourcePath, outputPath, 'sourcePath')
 
