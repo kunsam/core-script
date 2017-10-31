@@ -1,6 +1,6 @@
 
 import path from 'path'
-
+var shell = require('shelljs')
 // 这个文件要暴露到项目配置中 core.config.js
 
 const packJson = require('../package.json')
@@ -10,7 +10,7 @@ export default {
   version: packJson.version,
 
   // 命令行执行路径
-  basePath: process.cwd(),
+  basePath: shell.pwd().stdout,
   
   pkgBasePath: path.dirname(module.id)
   
