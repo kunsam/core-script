@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/recompose.js"
+    "dot": "NODE_ENV=node babel-node src/cli/init-project.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -22,6 +22,7 @@
     "chalk": "^2.3.0",
     "commander": "^2.11.0",
     "copy-paste": "^1.3.0",
+    "find-imports": "^0.5.2",
     "fs-extra": "^4.0.2",
     "lodash": "^4.17.4",
     "readline-sync": "^1.4.7",
@@ -42,6 +43,8 @@
     "CORE-xplan": "bin/core-xmind-plan.js",
     "CORE-xmind-plan": "bin/core-xmind-plan.js",
     "CORE-recompose": "bin/core-recompose.js",
-    "CORE-rcp": "bin/core-recompose.js"
+    "CORE-rcp": "bin/core-recompose.js",
+    "CORE-init-project": "bin/core-init-project.js",
+    "CORE-app-expand": "bin/core-app-expand.js"
   }
 }
