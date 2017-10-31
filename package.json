@@ -7,7 +7,7 @@
     "node": ">=5.1"
   },
   "scripts": {
-    "reset": "npm run build && npm run publish:patch",
+    "reset": "npm run build && git add . && git commit -m reset &&npm run publish:patch",
     "start": "npm run build:watch",
     "build": "npm run clean && babel src -d lib",
     "build:watch": "babel src --watch -d lib",
