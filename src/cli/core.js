@@ -9,6 +9,7 @@ commander
 
 commander
   .command('init-project', 'open the guide of init a project')
+  .command('init-core', 'create core.config.js')
   .command('xmind-ui', 'generates ui files from xmind tree')
   .command('xui', 'alias for xmind-ui')
   .command('xmind-plan', 'generates project plan files from xmind tree')
