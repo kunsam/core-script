@@ -1,0 +1,1 @@
+export default (state) => `withState('${state}', set${state}, ({ props }) => false),`
