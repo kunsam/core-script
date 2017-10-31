@@ -5,13 +5,14 @@ const pendTimeStr = `time:${timeField.pend}`
 const chalk = require('chalk')
 const omit = require('lodash/omit')
 const merge = require('lodash/merge')
+const findIndex = require('lodash/findIndex')
 const isArray = require('lodash/isArray')
 
 export function getPageWorkflow(instances, workflowModel) {
   const workflows = {}
   for (let [key, value] of Object.entries(instances)) {
     const flows = workflowModel.map(node => ({
-      node: key + node.name ? `/${node.name}` : '',
+      node: (key ? `${key}/` : '') + node.name,
       time: node.time,
       state: stateField.todo,
       bugs: []
@@ -59,74 +60,53 @@ export function getPageWorkflow(instances, workflowModel) {
   return workflows
 }
 
+
+// component:
+// { '滑动选择/slick组件': { className: '组件开发业务', moduler: [Object], difficulty: 'simple' },
+//   '滑动选择/Z组件': { className: '静态组件', moduler: {}, difficulty: 'difficult' },
+//   '滑动选择/K框架': { className: '定制业务', moduler: [Object], difficulty: 'simple' } },  component:
+//    { '滑动选择/slick组件': { className: '组件开发业务', moduler: [Object], difficulty: 'simple' },
+//      '滑动选择/Z组件': { className: '静态组件', moduler: {}, difficulty: 'difficult' },
+//      '滑动选择/K框架': { className: '定制业务', moduler: [Object], difficulty: 'simple' } },
+
+
 export function getComponentWorkflow(instances, workflowModel) {
   let compWorkflows = {}
-  instances = mergeRerference(instances) // 先根据引表，生成引用实例
-  for (let [key, value] of Object.entries(instances)) { // key 是每个组件的名称
-    const {
-      className,
-      module: { add, remove, replace },
-      reference
-    } = value
-    if (className === '定制业务') {
-      const specialModel = instanceWorkflow([], { add, remove, replace }).map(({ name, time }) => ({
-        name,
-        time: { min: time, max: time, expect: time }
-      }))
-      compWorkflows[key] = {
-        ...value,
-        workflow: getPageWorkflow({ [key]: value }, specialModel)[key]
-      }
-    } else {
-      let matchWorkflowModel = workflowModel[className]// 因为要修改模型，深度复制一份
-      if (!isArray(matchWorkflowModel)) { // 引用模型
-        if (!matchWorkflowModel) {
-          console.log(chalk.red(`[${key}] - 不存在该业务类型: [${className}] !\n`))
-          return compWorkflows
-        }
-        if (!workflowModel[matchWorkflowModel.pointer]) {
-          console.log(chalk.red(`业务指针错误, [${key}] - 不存在该业务类型: [${className}] !\n`))
-          return compWorkflows
-        }
-        matchWorkflowModel = workflowModel[matchWorkflowModel.pointer]
-      }
+  for (let [key, instance] of Object.entries(instances)) { // key 是每个组件的名称
+    const { className, moduler } = instance
+    let matchWorkflowModel = workflowModel[className]// 因为要修改模型，深度复制一份
+    if (!isArray(matchWorkflowModel)) { // 引用模型
       if (!matchWorkflowModel) {
-        console.log(chalk.red(key, '不存在工作流模型!\n'))
+        console.log(chalk.red(`[${key}] - 不存在该业务类型: [${className}] !\n`))
         return compWorkflows
       }
-      const deepCopy = matchWorkflowModel.map(a => a)
-      const newWorkflowModel = instanceWorkflow(deepCopy, { add, remove, replace })
-      compWorkflows[key] = {
-        ...value,
-        workflow: getPageWorkflow({ [key]: value }, newWorkflowModel)[key]
+      if (!workflowModel[matchWorkflowModel.pointer]) {
+        console.log(chalk.red(`业务指针错误, [${key}] - 不存在该业务类型: [${className}] !\n`))
+        return compWorkflows
       }
+      matchWorkflowModel = workflowModel[matchWorkflowModel.pointer]
+    }
+    if (!matchWorkflowModel) {
+      console.log(chalk.red(key, '不存在工作流模型!\n'))
+      return compWorkflows
+    }
+    const deepCopy = matchWorkflowModel.map(a => a)
+    const newWorkflowModel = updateModel(deepCopy, moduler)
+    compWorkflows[key] = {
+      ...instance,
+      workflow: getPageWorkflow({ [key]: instance }, newWorkflowModel)[key]
     }
   }
   return compWorkflows
 }
 
-export function mergeRerference(instances = {}) {
-  let rinstances = {}
-  for (let [key, value] of Object.entries(instances)) {
-    const { reference } = value
-    if (reference) {
-      for (let [name, rvalue] of Object.entries(reference)) {
-        let rname = name
-        if (name[name.length - 1] === '/') {
-          rname = name.slice(0, name.length - 1)
-        }
-        rinstances[rname] = {
-          ...omit(value, ['reference']),
-          module: rvalue.module || {} // merge(value.module, rvalue.module)
-        }
-      }
-    }
-    instances[key] = omit(value, ['reference'])
-  }
-  return merge(instances, rinstances)
+function getPrevPath(path, key) {
+  const split = path.split('/')
+  const _findIndex = findIndex(split, s => s === key)
+  return _findIndex < 0 ? path : split.slice(0, _findIndex + 1).join('/')
 }
 
-function instanceWorkflow(workflow, moduler) { // 实例化工作流
+function updateModel(model, moduler) { // 实例化工作流
   const { add, remove, replace } = moduler
   if (replace) { // 使用replace更新工作流
     // 找到首个位置
@@ -135,38 +115,35 @@ function instanceWorkflow(workflow, moduler) { // 实例化工作流
     for (let [rkey, rvalue] of Object.entries(replace)) {
       let firstIndex = null
       let count = null
+      let prevPath = ''
       let replaceFlows = []
-      const replacePath = rvalue.address + (rvalue.address ? '/' : '') + rkey
-      workflow.forEach((flow, findex) => {
-        if (flow.name.indexOf(replacePath) >= 0) {
+      model.forEach((flow, findex) => {
+        const happenIndex = flow.name.indexOf(rkey)
+        if (happenIndex >= 0) {
+          if (!prevPath) prevPath = getPrevPath(flow.name, rkey)
           if (!firstIndex) firstIndex = findex
           if (!count) count = 0
           count++
         }
       })
-      for (let [nmkey, nmvalue] of Object.entries(rvalue.newModule)) {
+      for (let [nmkey, nmvalue] of Object.entries(rvalue)) {
         replaceFlows.push({
-          name: replacePath + '/' + nmkey, //  替换模块3
-          time: nmvalue.time
+          name: prevPath + `${nmkey ? `/${nmkey}` : ''}`, //  替换模块3
+          time: nmvalue
         })
       }
-      workflow.splice(firstIndex, count, ...replaceFlows)
+      model.splice(firstIndex, count, ...replaceFlows)
     }
   }
   if (remove) {
-    for (let [rkey, rvalue] of Object.entries(remove)) {
-      const removePath = rvalue.address + (rvalue.address ? '/' : '') + rkey
-      workflow = workflow.filter(flow => (flow.name.indexOf(removePath) === -1))
+    for (let rkey of Object.keys(remove)) {
+      model = model.filter(flow => (flow.name.indexOf(rkey) === -1))
     }
   }
   if (add) {
     for (let [rkey, rvalue] of Object.entries(add)) {
-      const addName = rvalue.address + (rvalue.address ? '/' : '') + rkey
-      workflow.push({
-        name: addName,
-        time: rvalue.time
-      })
+      model.push({ name: rvalue.address, time: rvalue.time })
     }
   }
-  return workflow
+  return model
 }

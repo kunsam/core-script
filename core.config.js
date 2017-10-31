@@ -8,7 +8,6 @@ export default {
       // output: 'xmind/ui' // 不配置的话默认同xmind读取路径
     },
     plan: {
-      pdf: true, // 是否生成Pdf,
       path: 'xmind/develop_model.xmind',
 
       // output: { // 默认为读取路径/plan-output

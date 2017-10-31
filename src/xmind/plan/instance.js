@@ -71,8 +71,10 @@ function resolvePath(path) {
 
   return importClassIndex < 0 ? {
     type: 'component',
+    pageName: pagePart.join('/').replace(specialSymbolMap.page, ''),
     ...getAddClassInstance(path)
   } : {
+    pageName: pagePart.join('/').replace(specialSymbolMap.page, ''),
     type: 'component',
     ...getImportClassInstance(path)
   }
@@ -93,7 +95,7 @@ function getCustomInstance(path) {
 }
 
 function getNodeTime(timePart) {
-  if (!timePart.length) return { time: null }
+  if (!timePart.length) return null
   const firstTime = timePart[0].replace('time:', '')
   if (firstTime === timeField.pend) {
     return null
@@ -134,7 +136,7 @@ function getImportClassInstance(path) {
   // import的放入add的reference中
   return {
     name: importName,
-    moduler: getModuler(path, modulePart)
+    moduler: getModuler(modulePart)
   }
 }
 
@@ -142,6 +144,7 @@ function getAddClassInstance(path) {
   // 测试/入口/选择页*/滑动选择/Z组件$静态组件
   const splitPaths = path.split('/')
   const pageIndex = getSymbolIndex(path, 'page')
+  const presetIndex = getSymbolIndex(path, 'presetType')
   const pagePart = pageIndex < 0 ? [] : splitPaths.slice(0, pageIndex + 1)
   const classIndex = getSymbolIndex(path, 'addClass')
   const classStr = splitPaths[classIndex]
@@ -154,15 +157,15 @@ function getAddClassInstance(path) {
   return {
     name,
     className: splitBusniess[1],
-    moduler: getModuler(path, modulePart)
+    moduler: getModuler(modulePart),
+    difficulty: presetIndex < 0 ? difficultyField.simple : splitPaths[presetIndex].replace(specialSymbolMap.presetType, '')
   }
 }
 
 
-function getModuler(path, modulePart) {
+function getModuler(modulePart) {
   // [模块1, +X的引入, time:4, 30]
   // +T的收入
-  const timeIndex = getSymbolIndex(path, 'timeType')
   const moduleIndex = findIndex(modulePart, path => (
     path[0] === specialSymbolMap.addModule ||
     path[0] === specialSymbolMap.removeModule ||
@@ -170,8 +173,11 @@ function getModuler(path, modulePart) {
   ))
   if (moduleIndex < 0) return {} // 测试/出口/中间页*/@滑动选择>slick组件
   const moduler = modulePart[moduleIndex]
-  const timePart = moduleIndex === modulePart.length - 1 ? [] : modulePart.slice(moduleIndex + 1)
+
+  const timeIndex = findIndex(modulePart, p => p.indexOf(specialSymbolMap.timeType) >= 0)
+  const timePart = timeIndex < 0 ? [] : modulePart.slice(timeIndex)
   const prevPath = moduleIndex === 0 ? '' : modulePart.slice(0, moduleIndex).join('/')
+
   const modulerName = moduler.slice(1)
   const address = `${prevPath}${prevPath ? '/' : ''}${moduler.slice(1)}`
   const time = getNodeTime(timePart)
@@ -179,6 +185,15 @@ function getModuler(path, modulePart) {
     [specialSymbolMap.addModule]: 'add',
     [specialSymbolMap.removeModule]: 'remove',
     [specialSymbolMap.replaceModule]: 'replace'
+  }
+
+  if (moduler[0] === specialSymbolMap.replaceModule) {
+    let betweenModulerAndTime = []
+    if (timeIndex < 0) betweenModulerAndTime = modulePart.slice(moduleIndex + 1)
+    if (moduleIndex + 1 < timeIndex) betweenModulerAndTime = modulePart.slice(moduleIndex + 1, timeIndex)
+    return {[fieldMap[moduler[0]]]: {
+      [modulerName]: { [betweenModulerAndTime.join('/')]: time }
+    }}
   }
   return { [fieldMap[moduler[0]]]: { [modulerName]: { time, address } }}
 }

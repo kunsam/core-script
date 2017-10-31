@@ -1,0 +1,3643 @@
+{
+  "allWorkflow": [
+    {
+      "name": "测试/出口/一个页",
+      "page": "测试/出口/一个页",
+      "busniess": "页面业务",
+      "flows": [
+        {
+          "node": "测试/出口/一个页/项目模型/创建WA结构/配置后npm run app-page",
+          "time": {
+            "min": 1,
+            "max": 3,
+            "expect": 2
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/数据组装/数据映射与加工",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/数据组装/api接入",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+          "time": {
+            "min": 5,
+            "max": 5,
+            "expect": 5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/调试与测试",
+          "time": {
+            "min": 30,
+            "max": 30,
+            "expect": 30
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+          "time": {
+            "min": 5,
+            "max": 5,
+            "expect": 5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/容器业务/组件组装",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/容器业务/路由关联",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/调试提交文档更新",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "工作流串联与整体调试",
+          "time": {
+            "min": 25,
+            "max": 75,
+            "expect": 50
+          }
+        }
+      ],
+      "difficulty": "difficult",
+      "schedule": {
+        "expect": 324.5,
+        "min": 156,
+        "max": 493
+      },
+      "specialFlows": [
+        {
+          "node": "测试/出口/一个页/项目模型/容器业务/布局开发/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/流程串联与整体调试/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/单元测试/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/一个页/项目模型/定制业务/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        }
+      ]
+    },
+    {
+      "name": "测试/出口/二个页",
+      "page": "测试/出口/二个页",
+      "busniess": "页面业务",
+      "flows": [
+        {
+          "node": "测试/出口/二个页/项目模型/创建WA结构/配置后npm run app-page",
+          "time": {
+            "min": 1,
+            "max": 3,
+            "expect": 2
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/数据组装/数据映射与加工",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/数据组装/api接入",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+          "time": {
+            "min": 5,
+            "max": 5,
+            "expect": 5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/调试与测试",
+          "time": {
+            "min": 30,
+            "max": 30,
+            "expect": 30
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+          "time": {
+            "min": 5,
+            "max": 5,
+            "expect": 5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/容器业务/组件组装",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/容器业务/路由关联",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/调试提交文档更新",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "工作流串联与整体调试",
+          "time": {
+            "min": 25,
+            "max": 75,
+            "expect": 50
+          }
+        }
+      ],
+      "difficulty": "simple",
+      "schedule": {
+        "expect": 324.5,
+        "min": 156,
+        "max": 493
+      },
+      "specialFlows": [
+        {
+          "node": "测试/出口/二个页/项目模型/容器业务/布局开发/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/流程串联与整体调试/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/单元测试/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "测试/出口/二个页/项目模型/定制业务/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        }
+      ]
+    },
+    {
+      "name": "滑动选择/slick组件",
+      "page": "测试/出口/中间页",
+      "busniess": "组件开发业务",
+      "flows": [
+        {
+          "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/接口设计",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/组件实例化",
+          "time": {
+            "min": 5,
+            "max": 5,
+            "expect": 5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/组件开发业务/静态组件/样式定制",
+          "time": {
+            "min": 30,
+            "max": 30,
+            "expect": 30
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/组件开发业务/静态组件/调试与测试",
+          "time": {
+            "min": 30,
+            "max": 30,
+            "expect": 30
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/组件开发业务/动态业务/状态设计与绑定",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/模块1/X的引入",
+          "time": {
+            "min": 4,
+            "max": 30,
+            "expect": 17
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/模块2/样式定制",
+          "time": {
+            "min": 20,
+            "max": 30,
+            "expect": 25
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/slick组件/T的收入",
+          "time": {
+            "min": 20,
+            "max": 40,
+            "expect": 30
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "工作流串联与整体调试",
+          "time": {
+            "min": 10,
+            "max": 30,
+            "expect": 20
+          }
+        }
+      ],
+      "difficulty": "simple",
+      "schedule": {
+        "expect": 197,
+        "min": 139,
+        "max": 255
+      },
+      "specialFlows": [
+        {
+          "node": "滑动选择/slick组件/Y的引入",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        }
+      ]
+    },
+    {
+      "name": "滑动选择/Z组件",
+      "page": "测试/入口/选择页",
+      "busniess": "静态组件",
+      "flows": [
+        {
+          "node": "滑动选择/Z组件/静态组件/静态业务/接口设计",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/Z组件/静态组件/静态业务/组件实例化",
+          "time": {
+            "min": 5,
+            "max": 5,
+            "expect": 5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/dom结构",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/数据绑定",
+          "time": {
+            "min": 5,
+            "max": 15,
+            "expect": 10
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/Z组件/静态组件/样式定制/样式表结构",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/Z组件/静态组件/样式定制/样式表内容",
+          "time": {
+            "min": 5,
+            "max": 30,
+            "expect": 17.5
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/Z组件/静态组件/调试与测试",
+          "time": {
+            "min": 30,
+            "max": 30,
+            "expect": 30
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "工作流串联与整体调试",
+          "time": {
+            "min": 6,
+            "max": 18,
+            "expect": 12
+          }
+        }
+      ],
+      "difficulty": "difficult",
+      "schedule": {
+        "expect": 112,
+        "min": 66,
+        "max": 158
+      },
+      "specialFlows": []
+    },
+    {
+      "name": "滑动选择/K框架",
+      "page": "测试/入口/选择页",
+      "busniess": "定制业务",
+      "flows": [
+        {
+          "node": "滑动选择/K框架/定制业务0",
+          "time": {
+            "min": 4,
+            "max": 30,
+            "expect": 17
+          },
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "工作流串联与整体调试",
+          "time": {
+            "min": 2,
+            "max": 6,
+            "expect": 4
+          }
+        }
+      ],
+      "difficulty": "simple",
+      "schedule": {
+        "expect": 21,
+        "min": 6,
+        "max": 36
+      },
+      "specialFlows": [
+        {
+          "node": "滑动选择/K框架/定制业务/定制",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        },
+        {
+          "node": "滑动选择/K框架/定制业务2",
+          "time": null,
+          "state": "todo",
+          "bugs": []
+        }
+      ]
+    },
+    {
+      "name": "埋点业务",
+      "schedule": {
+        "min": 60,
+        "max": 60,
+        "expect": 60
+      },
+      "flows": [
+        {
+          "node": "埋点业务",
+          "time": {
+            "min": 60,
+            "max": 60,
+            "expect": 60
+          }
+        }
+      ],
+      "specialFlows": [],
+      "difficulty": "normal",
+      "busniess": "定制业务"
+    },
+    {
+      "name": "缓存业务",
+      "schedule": {
+        "min": 60,
+        "max": 60,
+        "expect": 60
+      },
+      "flows": [
+        {
+          "node": "缓存业务",
+          "time": {
+            "min": 60,
+            "max": 60,
+            "expect": 60
+          }
+        }
+      ],
+      "specialFlows": [],
+      "difficulty": "normal",
+      "busniess": "定制业务"
+    },
+    {
+      "name": "架构设计和优化/优化1",
+      "schedule": {
+        "min": 60,
+        "max": 60,
+        "expect": 60
+      },
+      "flows": [
+        {
+          "node": "架构设计和优化/优化1",
+          "time": {
+            "min": 60,
+            "max": 60,
+            "expect": 60
+          }
+        }
+      ],
+      "specialFlows": [],
+      "difficulty": "normal",
+      "busniess": "定制业务"
+    },
+    {
+      "name": "架构设计和优化/优化2",
+      "schedule": {
+        "min": 30,
+        "max": 60,
+        "expect": 45
+      },
+      "flows": [
+        {
+          "node": "架构设计和优化/优化2",
+          "time": {
+            "min": 30,
+            "max": 60,
+            "expect": 45
+          }
+        }
+      ],
+      "specialFlows": [],
+      "difficulty": "normal",
+      "busniess": "定制业务"
+    }
+  ],
+  "pageMap": {
+    "测试/出口/一个页": [
+      {
+        "name": "测试/出口/一个页",
+        "page": "测试/出口/一个页",
+        "busniess": "页面业务",
+        "flows": [
+          {
+            "node": "测试/出口/一个页/项目模型/创建WA结构/配置后npm run app-page",
+            "time": {
+              "min": 1,
+              "max": 3,
+              "expect": 2
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/数据组装/数据映射与加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/数据组装/api接入",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/组件组装",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/路由关联",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/调试提交文档更新",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 25,
+              "max": 75,
+              "expect": 50
+            }
+          }
+        ],
+        "difficulty": "difficult",
+        "schedule": {
+          "expect": 324.5,
+          "min": 156,
+          "max": 493
+        },
+        "specialFlows": [
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/布局开发/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/流程串联与整体调试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/单元测试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      }
+    ],
+    "测试/出口/二个页": [
+      {
+        "name": "测试/出口/二个页",
+        "page": "测试/出口/二个页",
+        "busniess": "页面业务",
+        "flows": [
+          {
+            "node": "测试/出口/二个页/项目模型/创建WA结构/配置后npm run app-page",
+            "time": {
+              "min": 1,
+              "max": 3,
+              "expect": 2
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/数据组装/数据映射与加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/数据组装/api接入",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/组件组装",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/路由关联",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/调试提交文档更新",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 25,
+              "max": 75,
+              "expect": 50
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 324.5,
+          "min": 156,
+          "max": 493
+        },
+        "specialFlows": [
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/布局开发/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/流程串联与整体调试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/单元测试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      }
+    ],
+    "测试/出口/中间页": [
+      {
+        "name": "滑动选择/slick组件",
+        "page": "测试/出口/中间页",
+        "busniess": "组件开发业务",
+        "flows": [
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/样式定制",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/模块1/X的引入",
+            "time": {
+              "min": 4,
+              "max": 30,
+              "expect": 17
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/模块2/样式定制",
+            "time": {
+              "min": 20,
+              "max": 30,
+              "expect": 25
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/T的收入",
+            "time": {
+              "min": 20,
+              "max": 40,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 10,
+              "max": 30,
+              "expect": 20
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 197,
+          "min": 139,
+          "max": 255
+        },
+        "specialFlows": [
+          {
+            "node": "滑动选择/slick组件/Y的引入",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      }
+    ],
+    "测试/入口/选择页": [
+      {
+        "name": "滑动选择/Z组件",
+        "page": "测试/入口/选择页",
+        "busniess": "静态组件",
+        "flows": [
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 6,
+              "max": 18,
+              "expect": 12
+            }
+          }
+        ],
+        "difficulty": "difficult",
+        "schedule": {
+          "expect": 112,
+          "min": 66,
+          "max": 158
+        },
+        "specialFlows": []
+      },
+      {
+        "name": "滑动选择/K框架",
+        "page": "测试/入口/选择页",
+        "busniess": "定制业务",
+        "flows": [
+          {
+            "node": "滑动选择/K框架/定制业务0",
+            "time": {
+              "min": 4,
+              "max": 30,
+              "expect": 17
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 2,
+              "max": 6,
+              "expect": 4
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 21,
+          "min": 6,
+          "max": 36
+        },
+        "specialFlows": [
+          {
+            "node": "滑动选择/K框架/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/K框架/定制业务2",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      }
+    ],
+    "undefined": [
+      {
+        "name": "埋点业务",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "埋点业务",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "缓存业务",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "缓存业务",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "架构设计和优化/优化1",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "架构设计和优化/优化1",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "架构设计和优化/优化2",
+        "schedule": {
+          "min": 30,
+          "max": 60,
+          "expect": 45
+        },
+        "flows": [
+          {
+            "node": "架构设计和优化/优化2",
+            "time": {
+              "min": 30,
+              "max": 60,
+              "expect": 45
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      }
+    ]
+  },
+  "busniessMap": {
+    "页面业务": [
+      {
+        "name": "测试/出口/一个页",
+        "page": "测试/出口/一个页",
+        "busniess": "页面业务",
+        "flows": [
+          {
+            "node": "测试/出口/一个页/项目模型/创建WA结构/配置后npm run app-page",
+            "time": {
+              "min": 1,
+              "max": 3,
+              "expect": 2
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/数据组装/数据映射与加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/数据组装/api接入",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/组件组装",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/路由关联",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/调试提交文档更新",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 25,
+              "max": 75,
+              "expect": 50
+            }
+          }
+        ],
+        "difficulty": "difficult",
+        "schedule": {
+          "expect": 324.5,
+          "min": 156,
+          "max": 493
+        },
+        "specialFlows": [
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/布局开发/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/流程串联与整体调试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/单元测试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      },
+      {
+        "name": "测试/出口/二个页",
+        "page": "测试/出口/二个页",
+        "busniess": "页面业务",
+        "flows": [
+          {
+            "node": "测试/出口/二个页/项目模型/创建WA结构/配置后npm run app-page",
+            "time": {
+              "min": 1,
+              "max": 3,
+              "expect": 2
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/数据组装/数据映射与加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/数据组装/api接入",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/组件组装",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/路由关联",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/调试提交文档更新",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 25,
+              "max": 75,
+              "expect": 50
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 324.5,
+          "min": 156,
+          "max": 493
+        },
+        "specialFlows": [
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/布局开发/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/流程串联与整体调试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/单元测试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      }
+    ],
+    "组件开发业务": [
+      {
+        "name": "滑动选择/slick组件",
+        "page": "测试/出口/中间页",
+        "busniess": "组件开发业务",
+        "flows": [
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/样式定制",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/模块1/X的引入",
+            "time": {
+              "min": 4,
+              "max": 30,
+              "expect": 17
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/模块2/样式定制",
+            "time": {
+              "min": 20,
+              "max": 30,
+              "expect": 25
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/T的收入",
+            "time": {
+              "min": 20,
+              "max": 40,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 10,
+              "max": 30,
+              "expect": 20
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 197,
+          "min": 139,
+          "max": 255
+        },
+        "specialFlows": [
+          {
+            "node": "滑动选择/slick组件/Y的引入",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      }
+    ],
+    "静态组件": [
+      {
+        "name": "滑动选择/Z组件",
+        "page": "测试/入口/选择页",
+        "busniess": "静态组件",
+        "flows": [
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 6,
+              "max": 18,
+              "expect": 12
+            }
+          }
+        ],
+        "difficulty": "difficult",
+        "schedule": {
+          "expect": 112,
+          "min": 66,
+          "max": 158
+        },
+        "specialFlows": []
+      }
+    ],
+    "定制业务": [
+      {
+        "name": "滑动选择/K框架",
+        "page": "测试/入口/选择页",
+        "busniess": "定制业务",
+        "flows": [
+          {
+            "node": "滑动选择/K框架/定制业务0",
+            "time": {
+              "min": 4,
+              "max": 30,
+              "expect": 17
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 2,
+              "max": 6,
+              "expect": 4
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 21,
+          "min": 6,
+          "max": 36
+        },
+        "specialFlows": [
+          {
+            "node": "滑动选择/K框架/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/K框架/定制业务2",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      },
+      {
+        "name": "埋点业务",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "埋点业务",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "缓存业务",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "缓存业务",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "架构设计和优化/优化1",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "架构设计和优化/优化1",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "架构设计和优化/优化2",
+        "schedule": {
+          "min": 30,
+          "max": 60,
+          "expect": 45
+        },
+        "flows": [
+          {
+            "node": "架构设计和优化/优化2",
+            "time": {
+              "min": 30,
+              "max": 60,
+              "expect": 45
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      }
+    ]
+  },
+  "difficultyMap": {
+    "difficult": [
+      {
+        "name": "测试/出口/一个页",
+        "page": "测试/出口/一个页",
+        "busniess": "页面业务",
+        "flows": [
+          {
+            "node": "测试/出口/一个页/项目模型/创建WA结构/配置后npm run app-page",
+            "time": {
+              "min": 1,
+              "max": 3,
+              "expect": 2
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/数据组装/数据映射与加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/数据组装/api接入",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/组件组装",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/路由关联",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/调试提交文档更新",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 25,
+              "max": 75,
+              "expect": 50
+            }
+          }
+        ],
+        "difficulty": "difficult",
+        "schedule": {
+          "expect": 324.5,
+          "min": 156,
+          "max": 493
+        },
+        "specialFlows": [
+          {
+            "node": "测试/出口/一个页/项目模型/容器业务/布局开发/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/流程串联与整体调试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/单元测试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/一个页/项目模型/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      },
+      {
+        "name": "滑动选择/Z组件",
+        "page": "测试/入口/选择页",
+        "busniess": "静态组件",
+        "flows": [
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/Z组件/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 6,
+              "max": 18,
+              "expect": 12
+            }
+          }
+        ],
+        "difficulty": "difficult",
+        "schedule": {
+          "expect": 112,
+          "min": 66,
+          "max": 158
+        },
+        "specialFlows": []
+      }
+    ],
+    "simple": [
+      {
+        "name": "测试/出口/二个页",
+        "page": "测试/出口/二个页",
+        "busniess": "页面业务",
+        "flows": [
+          {
+            "node": "测试/出口/二个页/项目模型/创建WA结构/配置后npm run app-page",
+            "time": {
+              "min": 1,
+              "max": 3,
+              "expect": 2
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/创建模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建graphQl语句",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/创建数据流",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/直接调用/引入与调用",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/接入初始数据(服务端渲染)/重映射模拟数据结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/数据组装/数据映射与加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/数据组装/api接入",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表结构",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/样式定制/样式表内容",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/触发绑定",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/响应加工",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/组件开发业务/动态业务/事件与响应处理/回调与反馈",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/组件组装",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/路由关联",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/调试提交文档更新",
+            "time": {
+              "min": 5,
+              "max": 30,
+              "expect": 17.5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 25,
+              "max": 75,
+              "expect": 50
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 324.5,
+          "min": 156,
+          "max": 493
+        },
+        "specialFlows": [
+          {
+            "node": "测试/出口/二个页/项目模型/容器业务/布局开发/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/流程串联与整体调试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/单元测试/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "测试/出口/二个页/项目模型/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      },
+      {
+        "name": "滑动选择/slick组件",
+        "page": "测试/出口/中间页",
+        "busniess": "组件开发业务",
+        "flows": [
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/接口设计",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/组件实例化",
+            "time": {
+              "min": 5,
+              "max": 5,
+              "expect": 5
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/dom结构",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/静态业务/视图渲染/数据绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/样式定制",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/静态组件/调试与测试",
+            "time": {
+              "min": 30,
+              "max": 30,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/组件开发业务/动态业务/状态设计与绑定",
+            "time": {
+              "min": 5,
+              "max": 15,
+              "expect": 10
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/模块1/X的引入",
+            "time": {
+              "min": 4,
+              "max": 30,
+              "expect": 17
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/模块2/样式定制",
+            "time": {
+              "min": 20,
+              "max": 30,
+              "expect": 25
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/slick组件/T的收入",
+            "time": {
+              "min": 20,
+              "max": 40,
+              "expect": 30
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 10,
+              "max": 30,
+              "expect": 20
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 197,
+          "min": 139,
+          "max": 255
+        },
+        "specialFlows": [
+          {
+            "node": "滑动选择/slick组件/Y的引入",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      },
+      {
+        "name": "滑动选择/K框架",
+        "page": "测试/入口/选择页",
+        "busniess": "定制业务",
+        "flows": [
+          {
+            "node": "滑动选择/K框架/定制业务0",
+            "time": {
+              "min": 4,
+              "max": 30,
+              "expect": 17
+            },
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "工作流串联与整体调试",
+            "time": {
+              "min": 2,
+              "max": 6,
+              "expect": 4
+            }
+          }
+        ],
+        "difficulty": "simple",
+        "schedule": {
+          "expect": 21,
+          "min": 6,
+          "max": 36
+        },
+        "specialFlows": [
+          {
+            "node": "滑动选择/K框架/定制业务/定制",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          },
+          {
+            "node": "滑动选择/K框架/定制业务2",
+            "time": null,
+            "state": "todo",
+            "bugs": []
+          }
+        ]
+      }
+    ],
+    "normal": [
+      {
+        "name": "埋点业务",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "埋点业务",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "缓存业务",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "缓存业务",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "架构设计和优化/优化1",
+        "schedule": {
+          "min": 60,
+          "max": 60,
+          "expect": 60
+        },
+        "flows": [
+          {
+            "node": "架构设计和优化/优化1",
+            "time": {
+              "min": 60,
+              "max": 60,
+              "expect": 60
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      },
+      {
+        "name": "架构设计和优化/优化2",
+        "schedule": {
+          "min": 30,
+          "max": 60,
+          "expect": 45
+        },
+        "flows": [
+          {
+            "node": "架构设计和优化/优化2",
+            "time": {
+              "min": 30,
+              "max": 60,
+              "expect": 45
+            }
+          }
+        ],
+        "specialFlows": [],
+        "difficulty": "normal",
+        "busniess": "定制业务"
+      }
+    ]
+  },
+  "totalSchedule": {
+    "min": 733,
+    "max": 1675,
+    "expect": 1204
+  },
+  "blackHoleFlows": [
+    {
+      "node": "测试/出口/一个页/项目模型/容器业务/布局开发/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "测试/出口/一个页/项目模型/流程串联与整体调试/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "测试/出口/一个页/项目模型/单元测试/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "测试/出口/一个页/项目模型/定制业务/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "测试/出口/二个页/项目模型/容器业务/布局开发/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "测试/出口/二个页/项目模型/流程串联与整体调试/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "测试/出口/二个页/项目模型/单元测试/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "测试/出口/二个页/项目模型/定制业务/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "滑动选择/slick组件/Y的引入",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "滑动选择/K框架/定制业务/定制",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    },
+    {
+      "node": "滑动选择/K框架/定制业务2",
+      "time": null,
+      "state": "todo",
+      "bugs": []
+    }
+  ]
+}
