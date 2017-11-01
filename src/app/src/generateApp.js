@@ -5,7 +5,7 @@ var chalk = require('chalk')
 var upperFirst = require('lodash/upperFirst')
 import getAppPath from './getAppPath'
 
-const TEMPLATE_PATH = path.join(__dirname, '../../../template')
+const TEMPLATE_PATH = path.join(__dirname, '../../template')
 
 export default (basePath, pagePath) => {
   const app = getAppPath(basePath, pagePath)

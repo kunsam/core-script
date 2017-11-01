@@ -3,7 +3,7 @@ var fs = require('fs-extra')
 var chalk = require('chalk')
 var upperFirst = require('lodash/upperFirst');
 
-const TEMPLATE_PATH = '../../../template'
+const TEMPLATE_PATH = '../../template'
 
 export default function generateComponent(basePath, compPath, { type, name = 'template' }) {
   const splitPaths = compPath.split('/').map(a => a.replace(/\s/g, '') && upperFirst(a))

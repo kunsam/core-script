@@ -6,13 +6,13 @@ var readlineSync = require('readline-sync')
 var shell = require('shelljs')
 var ncp = require('copy-paste')
 
-import getComponentSnippet from '../../template/common/snippet/import/component'
+import getComponentSnippet from '../template/common/snippet/import/component'
 import generateComponent from '../app/src/generateComponent'
 
 import config from '../config'
 const { basePath } = config
 
-const dirs = fs.readdirSync(path.join(__dirname, '../../template/component'))
+const dirs = fs.readdirSync(path.join(__dirname, '../template/component'))
 
 console.log(chalk.cyan('请选择要生成的元件类型：\n'));
 dirs.forEach((dir, index) => { console.log(`${index + 1}.${dir}`) })
