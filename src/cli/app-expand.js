@@ -9,12 +9,12 @@ var upperFirst = require('lodash/upperFirst')
 var readlineSync = require('readline-sync')
 
 import findImports from 'find-imports'
-import { getFilesTree, joinFiles } from '../utils/file'
+import { getFilesTree, joinFilesName } from '../utils/file'
 
 import config from '../config'
 const { basePath } = config
 
-const joinedFiles = joinFiles(getFilesTree(path.join(basePath, 'pages')))
+const joinedFiles = joinFilesName(getFilesTree(path.join(basePath, 'pages')))
 
   .map(file => file.fullImportPath).filter(file => file.split('/').length > 1)
 

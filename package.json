@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/xmind-plan.js"
+    "dot": "NODE_ENV=node babel-node src/cli/core.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -49,6 +49,8 @@
     "CORE-icr": "bin/core-init-core.js",
     "CORE-init-core": "bin/core-init-core.js",
     "CORE-exp": "bin/core-app-expand.js",
-    "CORE-app-expand": "bin/core-app-expand.js"
+    "CORE-app-expand": "bin/core-app-expand.js",
+    "CORE-ccp": "bin/core-create-component.js",
+    "CORE-create-component": "bin/core-create-component.js"
   }
 }

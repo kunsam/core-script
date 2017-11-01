@@ -1,0 +1,1 @@
+export default (key) => `\n.${key}{\n\t\n}`
