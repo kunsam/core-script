@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/core.js"
+    "dot": "NODE_ENV=node babel-node src/cli/create-app.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -48,9 +48,11 @@
     "CORE-init-project": "bin/core-init-project.js",
     "CORE-icr": "bin/core-init-core.js",
     "CORE-init-core": "bin/core-init-core.js",
-    "CORE-exp": "bin/core-app-expand.js",
-    "CORE-app-expand": "bin/core-app-expand.js",
+    "CORE-exp": "bin/core-expand-app.js",
+    "CORE-expand-app": "bin/core-expand-app.js",
     "CORE-ccp": "bin/core-create-component.js",
-    "CORE-create-component": "bin/core-create-component.js"
+    "CORE-create-component": "bin/core-create-component.js",
+    "CORE-cap": "bin/core-create-app.js",
+    "CORE-create-app": "bin/core-create-app.js"
   }
 }

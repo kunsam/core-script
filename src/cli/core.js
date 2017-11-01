@@ -18,7 +18,8 @@ const CORE = [
   {
     class: '业务类',
     children: [
-      { name: 'app-expand', abbr: 'exp', comment: 'expand a page [展开一个页面的全部依赖]' }
+      { name: 'expand-app', abbr: 'exp', comment: 'expand a page [展开一个页面的全部依赖]' },
+      { name: 'create-app', abbr: 'cap', comment: 'create a page [创建一个页面级应用程式]' },
     ]
   },
   {

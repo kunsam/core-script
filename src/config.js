@@ -12,6 +12,6 @@ export default {
   // 命令行执行路径
   basePath: shell.pwd().stdout,
   
-  pkgBasePath: path.dirname(module.id)
+  pkgBasePath: path.join(__dirname, '../') // path.dirname(module.id)
   
 }

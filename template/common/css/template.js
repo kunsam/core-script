@@ -1,0 +1,1 @@
+export default (basePath, key) => `\n.${key}{\n\t\n}`
