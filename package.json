@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/delete-app.js"
+    "dot": "NODE_ENV=node babel-node src/cli/create-snippet.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -55,6 +55,12 @@
     "CORE-cap": "bin/core-create-app.js",
     "CORE-create-app": "bin/core-create-app.js",
     "CORE-dap": "bin/core-delete-app.js",
-    "CORE-delte-app": "bin/core-delete-app.js"
+    "CORE-delte-app": "bin/core-delete-app.js",
+    "CORE-create-snippet": "bin/core-create-snippet.js",
+    "CORE-csni": "bin/core-create-snippet.js",
+    "CORE-delete-snippet": "bin/core-delete-snippet.js",
+    "CORE-dsni": "bin/core-delete-snippet.js",
+    "CORE-set-snippet": "bin/core-set-snippet.js",
+    "CORE-ssni": "bin/core-set-snippet.js"
   }
 }

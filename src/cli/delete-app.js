@@ -13,7 +13,7 @@ const { basePath } = config
 let existApp = null
 
 const pagePath = loopInput('\n输入页面的路径(a/b/c || a/b/c.js): ', (input) => {
-  const app = getAppPath(basePath, input
+  const app = getAppPath(basePath, input)
   if (fs.existsSync(app.page.absolutePath) || fs.existsSync(path.join(basePath, app.page.importPath))) {
     existApp = app
     return true
@@ -26,7 +26,7 @@ const REMOVE_MAP = { page: 1, parser: 1, container: 1 }
 for (let [key, value] of Object.entries(existApp)) {
   if (REMOVE_MAP[key]) {
     fs.remove(path.join(basePath, value.importPath)).then(() => {
-      console.log(chalk.yellow(`>>> ${path.join(basePath, value.importPath)} 成功移除`));
+      console.log(chalk.yellow(`>>> [${key}] ${path.join(basePath, value.importPath)} 成功移除`));
     })
   }
 }

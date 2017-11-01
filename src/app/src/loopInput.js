@@ -11,7 +11,7 @@ export default function loopInput(question, condition) {
       console.log('输入错误，请重新输入');
       loop()
     } else {
-      result = input
+      result = valid
     }
   }
   return result

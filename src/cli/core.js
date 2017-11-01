@@ -24,6 +24,14 @@ const CORE = [
     ]
   },
   {
+    class: '补全类',
+    children: [
+      { name: 'create-snippet', abbr: 'csni', comment: 'create snippet [创建项目补全]' },
+      { name: 'delete-snippet', abbr: 'dsni', comment: 'delete snippet [删除项目补全]' },
+      { name: 'set-snippet', abbr: 'ssni', comment: 'set snippet range [设置项目补全范围]' },
+    ]
+  },
+  {
     class: '元件类',
     children: [
       { name: 'xmind-ui', abbr: 'xui', comment: 'generates ui files from xmind tree [根据xmind生成元件ui文件]' },
