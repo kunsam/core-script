@@ -71,7 +71,7 @@ export function joinFilesName (filestree) {
         name: child.name,
         importName: upperFirst(f.name) + child.importName || '',
         importPath: f.name + (child.importPath ? `/${child.importPath}` : ''),
-        fullImportPath: f.name + '/' + child.name,
+        fullImportPath: f.name + '/' + child.fullImportPath,
         shortcut: toLower(f.name.slice(0, 1)) + child.shortcut,
         description: f.name + ' -> ' + child.description
       })

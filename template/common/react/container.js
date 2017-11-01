@@ -1,9 +1,5 @@
-import path from 'path'
-import config from '../../../src/config'
-import templateConfig from '../../config'
 
-
-export default ({ parserAbsolutePath, key }) => `
+export default ({ key }) => `
 const ${key} = ({
   
 }) => (
@@ -11,8 +7,6 @@ const ${key} = ({
     <style dangerouslySetInnerHTML={{ __html: require('./index.scss') }} />
   </div>
 )
-
-${parserAbsolutePath ? `// [parser] // file:/${parserAbsolutePath}` : ''}
 
 export default compose(
   pure,

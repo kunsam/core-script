@@ -1,1 +1,1 @@
-export default (basePath, key) => `\n.${key}{\n\t\n}`
+export default ({ basePath, containerCss }) => `\n.${containerCss.key}{\n\t\n}`

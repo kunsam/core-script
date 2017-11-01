@@ -19,9 +19,9 @@ if (!pagePath) {
 } else {
   generateApp(basePath, pagePath)
   const NO = { no: 1, No: 1, NO: 1 }
-  // const isOpen = readlineSync.question('\n是否展开APP业务(yes[默认]/no): ')
-  // if (!NO[isOpen]) {
-  //   ExpandApp(basePath, pagePath)
-  // }
+  const isOpen = readlineSync.question('\n是否展开APP业务(yes[默认]/no): ')
+  if (!NO[isOpen]) {
+    ExpandApp(basePath, pagePath)
+  }
 }
 

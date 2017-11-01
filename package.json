@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/create-app.js"
+    "dot": "NODE_ENV=node babel-node src/cli/delete-app.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -53,6 +53,8 @@
     "CORE-ccp": "bin/core-create-component.js",
     "CORE-create-component": "bin/core-create-component.js",
     "CORE-cap": "bin/core-create-app.js",
-    "CORE-create-app": "bin/core-create-app.js"
+    "CORE-create-app": "bin/core-create-app.js",
+    "CORE-dap": "bin/core-delete-app.js",
+    "CORE-delte-app": "bin/core-delete-app.js"
   }
 }

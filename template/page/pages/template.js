@@ -3,7 +3,7 @@ import path from 'path'
 import Head from '../../head'
 import Container from '../../common/react/container'
 
-export default ({ basePath, key, parserPath, parserAbsolutePath }) => {
+export default ({ basePath, key, page, parser, container }) => {
   return (
 `import React from 'react'
 import WithEnv from 'hoc/WithEnv'
@@ -13,15 +13,17 @@ import { withGraphQlReduxSaga } from 'hoc/store.js'
 
 import WithApiStore from 'hoc/WithApiStore' // file:/${path.join(basePath, 'hoc/WithApiStore/index.js')}
 import AppLayout from 'layouts/AppLayout' // file:/${path.join(basePath, 'layouts/AppLayout/index.js')}
-import ${key}Parser from 'parsers/${parserPath}' // file:/${parserAbsolutePath}
+import ${parser.key} from 'parsers/${parser.importPath}' // file:/${parser.absolutePath}
+
+// [container] // file:/${container.absolutePath}
 
 const WithApiStoreParser = WithApiStore(
-  ${key}Parser,
+  ${parser.key},
   // [查看可配置的请求]  // file:/${path.join(basePath, 'api/_apiMap.js')}
   []
 )
 
-const ${key}Page = ({
+const ${page.key} = ({
   // 在这取出 getInitialProps 中 return 的数据 然后传给 WithApiStoreParser
   isServer,
   isMobile
@@ -32,7 +34,7 @@ const ${key}Page = ({
 )
 
 // [props对象] file:/${path.join(basePath, '.assist/next/total.js')}
-${key}Page.getInitialProps = async (props) => {
+${page.key}.getInitialProps = async (props) => {
 
   // [数据不存在则抓取] snippet: sls{api.shortcut} + dp{api.shortcut}
   // if (!fetchGetCommentsSuccess(props.store.getState())) {
@@ -49,7 +51,7 @@ ${key}Page.getInitialProps = async (props) => {
   }
 }
 
-export default withGraphQlReduxSaga(${key}Page) // 在这使用graphQl业务
+export default withGraphQlReduxSaga(${page.key}) // 在这使用graphQl业务
 `)
 }
 
