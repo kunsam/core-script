@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/delete-snippet.js"
+    "dot": "NODE_ENV=node babel-node src/cli/create-snippet.js"
   },
   "author": "kunsam",
   "license": "MIT",

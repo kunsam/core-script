@@ -40,20 +40,20 @@ export default function generateImportSnippet(joinedFiles, config, member) {
           file.snippetPrefix = `${config.snippet.import.modeShortcut || 'ip'}${memeberShortcut}${file.shortcut}`
           const snippet = loader(file, file.absolutePath)
           if (snippet) {
-            console.log(chalk.cyan(`得到了${member.path} -> ${fullName}的引入补全\n`))
+            console.log(chalk.cyan(`得到了${member.path} -> ${fullName}的引入补全`))
             if (memberSnippets[`import ${member.path} ${file.importName}`]) {
-              console.log(chalk.red(`${`import ${member.path} ${file.importName}`}的引入补全已存在，请注意\n`))
+              console.log(chalk.red(`${`import ${member.path} ${file.importName}`}的引入补全已存在，请注意`))
             }
             memberSnippets[`import ${member.path} ${file.importName}`] = snippet
             members.push(file)
           }
         } else {
           console.log(file.name, ':');
-          console.log(chalk.red(`${fullName}对应的loader定义不正确: 请检查${loaderPath}, 确认使用module.exports = loader\n`));
+          console.log(chalk.red(`${fullName}对应的loader定义不正确: 请检查${loaderPath}, 确认使用module.exports = loader`));
         }
       } else {
         console.log(file.name, ':');
-        console.log(chalk.red(`${fullName}不存在对应的loader: 请在 .core-config/member/loader/ 目录下添加对应的loader.js文件\n`));
+        console.log(chalk.red(`${fullName}不存在对应的loader: 请在 .core-config/member/loader/ 目录下添加对应的loader.js文件`));
       }
     }
     if(tmpPath) fs.unlinkSync(tmpPath)

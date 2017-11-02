@@ -60,16 +60,16 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 // 这里使用了recompose displayName 字段 看看有没有多种情况
                 memberSnippets[`use ${member.path} ${displayName || file.importName}`] = snippet
                 members.push(file)
-                console.log(chalk.cyan(`得到了${member.path} -> ${fullName}的组件使用补全\n`))
+                console.log(chalk.cyan(`得到了${member.path} -> ${fullName}的组件使用补全`))
               }
             }
           } else {
             console.log(file.name, ':');
-            console.log(chalk.red(`${fullName}对应的loader定义不正确: 请检查${loaderPath}, 确认使用module.exports = loader\n`));
+            console.log(chalk.red(`${fullName}对应的loader定义不正确: 请检查${loaderPath}, 确认使用module.exports = loader`));
           }
         } else {
           console.log(file.name, ':');
-          console.log(chalk.red(`${fullName}不存在对应的loader: 请在 .core-config/member/loader/ 目录下添加对应的loader.js文件\n`));
+          console.log(chalk.red(`${fullName}不存在对应的loader: 请在 .core-config/member/loader/ 目录下添加对应的loader.js文件`));
         }
       }
     }

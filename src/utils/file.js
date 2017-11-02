@@ -22,7 +22,7 @@ const ignoreFile = {
 export function getFilesTree(filePath) {
   let merge = []
   if (!fs.existsSync(filePath)) {
-    console.log(chalk.yellow(`不存在该成员路径：${filePath} 已将其忽略\n`));
+    console.log(chalk.grey(`不存在该路径：${filePath} 已将其忽略`));
   } else {
     const files = fs.readdirSync(filePath) || []
     files.forEach(dir => {

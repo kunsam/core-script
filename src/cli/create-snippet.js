@@ -16,9 +16,10 @@ const COMMENT_MAP = {
   member: '成员使用与引入补全',
   restApi: 'restful-api补全',
 }
+console.log(chalk.magenta(`-- [补全类型]:`))
 snippetDirs
   .sort((a, b) => (a.length - b.length))
-  .forEach((dir, index) => { console.log(chalk.white(`${index + 1}. ${dir} —— [${COMMENT_MAP[dir]}]\n`)) })
+  .forEach((dir, index) => { console.log(chalk.white(`${index + 1}. ${dir} —— [${COMMENT_MAP[dir]}]`)) })
 
 const choose = loopInput('创建哪类的补全？输入序号: ', (input) => {
   const choose = input && parseInt(input)
