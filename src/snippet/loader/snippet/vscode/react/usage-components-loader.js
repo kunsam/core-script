@@ -13,13 +13,13 @@
 //   root: 'components/'
 // }
 
-function loader(componentObj, component, filePath) {
+function loader({ componentObj, component, filePath }) {
   let snippet = null
-  if (component.default && component.default.propTypes) {
-    const name = component.default.displayName || componentObj.importName
+  if (component) {
+    const name = component.displayName || componentObj.importName
     snippet = {
       prefix: componentObj.snippetPrefix,
-      body: [`{/* file:/${filePath} */}\n<${name}`].concat(getBody(resolvePropType(component.default.propTypes))).concat(['/>']),
+      body: [`{/* file:/${filePath} */}\n<${name}`].concat(getBody(resolvePropType(component.propTypes))).concat(['/>']),
       description: `${componentObj.root} -> ${componentObj.description}`
     }
   }
@@ -39,6 +39,13 @@ function getBody(propTypes) {
 
 // 解析React组件的PropType
 function resolvePropType(componentProptypes) {
+  if (!componentProptypes) {
+    return [{
+      key: '未定义',
+      type: '',
+      require: false
+    }]
+  }
   return Object.keys(componentProptypes).map(key => {
     const resolved = resolveProperty(componentProptypes[key])
     return {

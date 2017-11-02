@@ -8,6 +8,7 @@ export default function generateImportSnippet(joinedFiles, config, member) {
   const removeFolder = joinedFiles.filter(file => file.type !== 'folder')
   let memberSnippets = {}
   let members = []
+
   removeFolder.forEach(file => {
     let tmpPath = ''
     const fullName = `${file.importPath}${file.name === 'index.js' ? '/index.js' : ''}` 
@@ -40,10 +41,10 @@ export default function generateImportSnippet(joinedFiles, config, member) {
           const snippet = loader(file, file.absolutePath)
           if (snippet) {
             console.log(chalk.cyan(`得到了${member.path} -> ${fullName}的引入补全\n`))
-            if (memberSnippets[`import ${member.path} ${file.key}`]) {
-              console.log(chalk.red(`${`import ${member.path} ${file.key}`}的引入补全已存在，请注意\n`))
+            if (memberSnippets[`import ${member.path} ${file.importName}`]) {
+              console.log(chalk.red(`${`import ${member.path} ${file.importName}`}的引入补全已存在，请注意\n`))
             }
-            memberSnippets[`import ${member.path} ${file.key}`] = snippet
+            memberSnippets[`import ${member.path} ${file.importName}`] = snippet
             members.push(file)
           }
         } else {

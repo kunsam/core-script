@@ -21,7 +21,7 @@ export default function generateComponent(basePath, compPath, { type, name = 'te
     fs.writeFileSync(absolutPath, getTemplate(basePath, key))
     if (type === 'components') {
       const cssTemplate = require(`${TEMPLATE_PATH}/common/css/template.js`).default
-      fs.writeFileSync(path.join(dirPath, 'index.scss'), cssTemplate(basePath, key))
+      fs.writeFileSync(path.join(dirPath, 'index.scss'), cssTemplate({ basePath, containerCss: { key } }))
     }
     console.log(chalk.yellow(`>>> [${dirPath}] 生成成功!\n`))
   }

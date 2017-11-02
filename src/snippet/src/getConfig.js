@@ -29,6 +29,7 @@ export default function getConfig(basePath) {
     }
     config = merge(userConfig,  defaultConfig)
     config.snippet.usage.rules = mergedResult
+    config.projectPath = basePath
   } else {
     console.log(`>>> 不存在用户自定义成员配置，将使用默认配置 ${userConfigPath}，或使用 core init-core 配置`);
   }

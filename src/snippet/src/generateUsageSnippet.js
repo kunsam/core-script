@@ -32,12 +32,12 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 if (file.name === 'index.js') file.absolutePath = path.join(file.absolutePath, './index.js')
                 const tmpFile = fs.readFileSync(file.absolutePath, 'utf-8')
                                   .replace(/require\(.+\)/g, '{}')
-                tmpPath = path.join(file.absolutePath, '../', `./tmp${Math.random()*100}.js`)
+                tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
                 fs.writeFileSync(tmpPath, tmpFile)
                 try {
                   component = require(tmpPath)
                 } catch (e) {
-                  console.log(chalk.red(`${file.absolutePath}暂时无法解析\n`));
+                  console.log(chalk.red(`${file.absolutePath} 暂时无法解析 ${e} \n`));
                   component = {}
                 }
               }
@@ -47,15 +47,20 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
               // ------------------------------------
               // 补全的快捷键核心定义
               // ------------------------------------
+              const matchDisplayname = component.default.displayName.match(/\(((\w)*?)\)/g)
+              const displayName = matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')
               const memeberShortcut  = member.shortcut || toLower(`${member.path.slice(0, 1)}${member.path.slice(member.path.length - 1)}`)
               file.snippetPrefix = `${config.snippet.usage.modeShortcut || 'use'}${memeberShortcut}${file.shortcut}`
-
-              const snippet = loader(file, component, file.absolutePath)
+              const snippet = loader({
+                componentObj: file,
+                component: { displayName, propTypes: component.default.propTypes },
+                filePath: file.absolutePath
+              })
               if (snippet) {
                 // 这里使用了recompose displayName 字段 看看有没有多种情况
-                memberSnippets[`use ${component.default.displayName || file.importName} ${file.key}`] = snippet
+                memberSnippets[`use ${member.path} ${displayName || file.importName}`] = snippet
                 members.push(file)
-                // console.log(chalk.cyan(`生成了${member.path} -> ${fullName}的组件补全\n`))
+                console.log(chalk.cyan(`得到了${member.path} -> ${fullName}的组件使用补全\n`))
               }
             }
           } else {

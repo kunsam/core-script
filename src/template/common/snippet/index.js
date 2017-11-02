@@ -1,5 +1,5 @@
 import path from 'path'
-import config from '../../../src/config'
+import config from '../../../config'
 import templateConfig from '../../config'
 
 // todo 后期快捷键配置绑定在这

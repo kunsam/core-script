@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/create-snippet.js"
+    "dot": "NODE_ENV=node babel-node src/cli/delete-snippet.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -31,10 +31,16 @@
     "xmind": "^0.5.0"
   },
   "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-require-ignore": "^0.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
-    "babel-preset-stage-3": "^6.24.1"
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "recompose": "^0.26.0"
   },
   "bin": {
     "CORE": "bin/core.js",

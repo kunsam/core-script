@@ -11,7 +11,6 @@ import generateImportSnippet from '../../src/generateImportSnippet'
 import generateUsageSnippet from '../../src/generateUsageSnippet'
 
 
-
 export default (basePath) => {
 
   const config = getConfig(basePath)
@@ -35,26 +34,23 @@ export default (basePath) => {
       ALLSNIPPETS = Object.assign(ALLSNIPPETS, usage.snippet)
     }
   })
+  
+  if (!fs.existsSync(outputPath)) throw Error(`输出路径不存在 ${outputPath}`)
+
+  const origin = require(outputPath)
+  fs.writeFileSync(outputPath, `${JSON.stringify(Object.assign(origin, ALLSNIPPETS), null, 2)}`)
+  console.log(chalk.yellow(`>> 成员补全更新完成: ${outputPath}\n`));
 
 
-  console.log(ALLSNIPPETS, 'ALLSNIPPETSALLSNIPPETS');
+  // 成员补全的keys表存下来
+  let memberSnippetKeys = {}
+  Object.keys(ALLSNIPPETS).map(key => { memberSnippetKeys[key] = 1 })
+  const projectKey = basePath.split('/').join('-')
+  const dataPath = path.join(__dirname, '../../data/member', `${projectKey}.json`)
+  console.log(dataPath, 'dataPath');
 
-  // const tip = fs.existsSync(outputPath) ? chalk.bold('更新') : chalk.italic('生成')
-  // if (fs.existsSync(outputPath)) {
-  //   const origin = require(outputPath)
-  // }
-
-
-
-  // fs.writeFileSync(outputPath, `${JSON.stringify(ALLSNIPPETS, null, 2)}`)
-  // console.log(chalk.yellow(`>> 成员补全${tip}完成: ${outputPath}\n`));
-  // // 我自己需要保留备份数据的路径，和业务无关
-  // const DATA_IMPORT_SNIPPET_PATH = path.join(__dirname, '../data/snippet/import/snippet.json') 
-  // const DATA_IMPORT_MEMBERS_PATH = path.join(__dirname, '../data/snippet/import/members.json')
-  // fs.writeFileSync(DATA_IMPORT_SNIPPET_PATH, `${JSON.stringify(ALLSNIPPETS, null, 2)}`)
-  // fs.writeFileSync(DATA_IMPORT_MEMBERS_PATH,`${JSON.stringify({ members: SNIPPETMEMBERS }, null, 2)}`)
-
-
+  // 一个项目的对应的basePath对应一个memberSnippet
+  fs.writeFileSync(dataPath, `${JSON.stringify(memberSnippetKeys, null, 2)}`)
 }
 
 
