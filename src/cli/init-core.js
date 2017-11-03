@@ -1,14 +1,11 @@
 
 const fs = require('fs-extra')
 const path = require('path')
+const chalk = require('chalk')
 
-import configStr from '../init.core.config'
-import { PROJECT_BASE_PATH } from '../src.config'
+import { PROJECT_BASE_PATH, PACKAGE_BASE_PATH } from '../src.config'
 
-const configFilePath = path.join(PROJECT_BASE_PATH, '.core-config/core.config.js')
-if (!fs.existsSync(configFilePath)) {
-  fs.writeFileSync(configFilePath, configStr)
-  console.log('>>> 初始化成功！')
-} else {
-  console.log('>>> 配置文件已存在！')
-}
+
+fs.copy(path.join(PACKAGE_BASE_PATH, '.core-config'), path.join(PROJECT_BASE_PATH, '.core-config'))
+  .then(() => console.log(chalk.yellow(`>>> 初始化成功`)))
+  .catch(err => console.error(err))
