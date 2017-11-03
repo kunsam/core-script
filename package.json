@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/select-snippet.js"
+    "dot": "NODE_ENV=node babel-node src/cli/create-rest-api-redux-flow.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -68,6 +68,10 @@
     "CORE-delete-snippet": "bin/core-delete-snippet.js",
     "CORE-dlsn": "bin/core-delete-snippet.js",
     "CORE-choose-snippet": "bin/core-select-snippet.js",
-    "CORE-slsn": "bin/core-select-snippet.js"
+    "CORE-slsn": "bin/core-select-snippet.js",
+    "CORE-create-rest-api-redux-flow": "bin/core-create-rest-api-redux-flow.js",
+    "CORE-crarf": "bin/core-create-rest-api-redux-flow.js",
+    "CORE-create-graphql-api": "bin/core-create-graphql-api.js",
+    "CORE-cgqa": "bin/core-create-graphql-api.js"
   }
 }

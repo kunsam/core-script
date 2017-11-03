@@ -4,19 +4,22 @@ const fs = require('fs-extra')
 const path = require('path')
 const chalk = require('chalk')
 const fetch = require('isomorphic-unfetch')
+const find = require('lodash/find')
 
-const processApiList = require('./processApiList')
 
-import createApi from './createApi'
+import createApi from '../src/createApi'
+import processApiList  from '../src/processApiList'
+import createApiMap from '../../template/restApi/apiMap'
+import createApiRedux from '../../template/restApi/apiRedux'
 
 
 export default (basePath) => {
 
-  const config = require(path.join(basePath, './core-config/restApi/config'))
+  const config = require(path.join(basePath, '.core-config/restApi/config'))
 
   if (config.debug) {
-    console.log(chalk.yellow('>> 使用 [mockData] 导出'));
-    updateApi(config.mockData)
+    console.log(chalk.yellow('>> 使用 [mockData] 导出'))
+    createApiReduxFlow(config.mockData, config, basePath)
   } else {
     fetch(config.src)
     .then( r => r ) // .json() )
@@ -24,42 +27,30 @@ export default (basePath) => {
       if (data && data.length) {
         console.log(chalk.yellow('>> 请求数据正确，开始导出 \n'));
         console.log(data);
-        updateApi(data)
+        createApiReduxFlow(data, config, basePath)
       } else {
         throw Error('请求数据出错，请检查')
       }
     })
   }
-
-  let ALLSNIPPETS = {}
-
-  generateSnippet({
-    outputPath,
-    snippet: ALLSNIPPETS,
-    dataPath: path.join(__dirname, '../../data/restApi', `${basePath.split('/').join('-')}.json`)
-  })
-
-
-
 }
 
 
-const find = require('lodash/find')
-const createApiMap = require('../src/setApiMap.js')
-const createApiRedux = require('../src/apiRedux.js')
+function createApiReduxFlow(apiData, config, basePath) {
+  const apiList = processApiList(apiData, config.authField, basePath)
 
+  generateApiMap(apiList, config.outputPath.apiMap, basePath)  // api/Map
 
-function updateApi(apiData) {
-  const apiList = processApiList(apiData, config)
-  generateApiMap(apiList, config)  // api/Map
-  generateApiList(apiList, config) // api/list
-  generateApiRedux(apiList, config)
+  generateApiList(apiList, config.outputPath.api, basePath) // api/list
+
+  generateApiRedux(apiList, config, basePath)
+
   console.log(chalk.yellow('>> 导出完毕\n'));
 }
 
 
-function generateApiList(apiList, config) {
-  const apiOutputDir = resolvePath(config.projectPath, config.outputPath.api)
+function generateApiList(apiList, outputPath, basePath) {
+  const apiOutputDir = path.join(basePath, outputPath)
   const apiFiles = createApi(apiList)
   fs.ensureDirSync(apiOutputDir)
   // 删除不使用的文件
@@ -75,22 +66,22 @@ function generateApiList(apiList, config) {
     if (fs.existsSync(filePath)) {
       console.log(chalk.red(`[generateApiList] ${api.key}.js已存在，如要更新请删除该文件`));
     } else {
-      fs.writeFileSync(filePath, api.file)
+      ensureWrite(filePath, api.file)
     }
   })
   console.log(chalk.cyan(`已更新api调用列表: ${apiOutputDir}\n`));
 }
 
-function generateApiMap (apiList, basePath) {
-  const apiMapPath = resolvePath(basePath, config.outputPath.apiMap)
-  fs.writeFileSync(apiMapPath, createApiMap(apiList))
+function generateApiMap (apiList, outputPath, basePath) {
+  const apiMapPath = path.join(basePath, outputPath)
+  ensureWrite(apiMapPath, createApiMap(apiList))
   console.log(chalk.cyan(`已更新api-map: ${apiMapPath}\n`));
 }
 
-function generateApiRedux(apiList, config) {
-  const actionListDir = resolvePath(basePath, config.outputPath.action)
-  const sagaListDir = resolvePath(basePath, config.outputPath.saga)
-  const selectorListDir = resolvePath(basePath, config.outputPath.selector)
+function generateApiRedux(apiList, config, basePath) {
+  const actionListDir = path.join(basePath, config.outputPath.action)
+  const sagaListDir = path.join(basePath, config.outputPath.saga)
+  const selectorListDir = path.join(basePath, config.outputPath.selector)
 
   fs.ensureDirSync(actionListDir)
   fs.ensureDirSync(sagaListDir)
@@ -131,19 +122,19 @@ function generateApiRedux(apiList, config) {
     if (fs.existsSync(actionfilePath)) {
       console.log(chalk.red(`${actionfilePath}已存在，如要更新请删除该文件\n`));
     } else {
-      fs.writeFileSync(actionfilePath, acion)
+      ensureWrite(actionfilePath, acion)
     }
 
     if (fs.existsSync(sagafilePath)) {
       console.log(chalk.red(`[saga] ${sagafilePath}已存在，如要更新请删除该文件\n`));
     } else {
-      fs.writeFileSync(sagafilePath, saga)
+      ensureWrite(sagafilePath, saga)
     }
 
     if (fs.existsSync(selectorfilePath)) {
       console.log(chalk.red(`${selectorfilePath}已存在，如要更新请删除该文件\n`));
     } else {
-      fs.writeFileSync(selectorfilePath, selector)
+      ensureWrite(selectorfilePath, selector)
     }
 
   })
@@ -160,9 +151,9 @@ function generateApiRedux(apiList, config) {
   `${gs2(list)}};\n`
 
 
-  fs.writeFileSync(path.join(actionListDir, `index.js`), actionIndexFile)
-  fs.writeFileSync(path.join(sagaListDir, `index.js`), indexFile)
-  fs.writeFileSync(path.join(selectorListDir, `index.js`), indexFile)
+  ensureWrite(path.join(actionListDir, `index.js`), actionIndexFile)
+  ensureWrite(path.join(sagaListDir, `index.js`), indexFile)
+  ensureWrite(path.join(selectorListDir, `index.js`), indexFile)
 
   console.log(chalk.yellow(`>> 已更新api-redux相关文件\n`));
 
@@ -187,4 +178,9 @@ function gs2 (mergeArrays) {
     arrayOutputStr += `  ${d},\n`
   })
   return arrayOutputStr
+}
+
+function ensureWrite(fpath, file) {
+  fs.ensureFileSync(fpath)
+  fs.writeFile(fpath, file)
 }

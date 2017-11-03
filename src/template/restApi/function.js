@@ -1,21 +1,21 @@
 
 
-
+const toUpper = require('lodash/toUpper')
 import createApiBody from './bodyPayload'
 
-const Head = `
+const Head = (api) => `
 // ------------------------------------
 // ${api.key} -- ${api.description}
 // ------------------------------------
 export default function ${api.key} (payload) {`
 
 export default function createApiFunction(api) {
-  let apiFunction = Head
+  let apiFunction = Head(api)
   const nbp = createApiNoneBodyPayload(api.parameters)
   if (nbp) apiFunction += `\n\t${nbp}`
   const bodyPayload = createApiBody(api.parameters)
-  if (bodyPayload) apiFunction += `\n\tconst bodyPayload = omit(payload, ${bodyPayloads})`
-  const bodyName = body ? 'bodyPayload' : 'payload'
+  if (bodyPayload) apiFunction += `\n\tconst bodyPayload = omit(payload, ${bodyPayload})`
+  const bodyName = bodyPayload ? 'bodyPayload' : 'payload'
   return (`
   ${apiFunction}
   return xFetch({

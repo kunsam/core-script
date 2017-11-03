@@ -32,6 +32,13 @@ const CORE = [
     ]
   },
   {
+    class: '数据类',
+    children: [
+      { name: 'create-rest-api-redux-flow', abbr: 'crarf', comment: 'create restful api redux flow [创建redux数据管理流程]' },
+      { name: 'create-graphql-api', abbr: 'cgqa', comment: 'create graphql api [创建graphql api 方法]' }
+    ]
+  },
+  {
     class: '元件类',
     children: [
       { name: 'xmind-ui', abbr: 'xui', comment: 'generates ui files from xmind tree [根据xmind生成元件ui文件]' },

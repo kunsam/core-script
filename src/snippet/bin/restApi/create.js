@@ -5,10 +5,9 @@ const path = require('path')
 const chalk = require('chalk')
 const fetch = require('isomorphic-unfetch')
 
-
 import { getSnippetOutputPath } from '../../src/getConfig'
 import createSnippet from './createSnippet'
-import processApiList from './processApiList'
+import processApiList from '../../../api/src/processApiList'
 import generateSnippet from '../../src/generateSnippet'
 
 
