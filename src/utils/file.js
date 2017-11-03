@@ -19,20 +19,20 @@ const ignoreFile = {
   }  
 }
 
-export function getFilesTree(filePath) {
+export function getFilesTree(dirPath) {
   let merge = []
-  if (!fs.existsSync(filePath)) {
-    console.log(chalk.grey(`不存在该路径：${filePath} 已将其忽略`));
+  if (!fs.existsSync(dirPath)) {
+    console.log(chalk.grey(`不存在该路径：${dirPath} 已将其忽略`));
   } else {
-    const files = fs.readdirSync(filePath) || []
-    files.forEach(dir => {
-      const dirPath = path.join(filePath, dir)
-      if (!(ignoreFile.name[dir] || ignoreFile.path[dirPath])) {
-        const children = fs.statSync(dirPath).isDirectory() ? getFilesTree(dirPath) : []
+    const files = fs.readdirSync(dirPath) || []
+    files.forEach(child => {
+      const childPath = path.join(dirPath, child)
+      if (!(ignoreFile.name[child] || ignoreFile.path[childPath])) {
+        const children = fs.statSync(childPath).isDirectory() ? getFilesTree(childPath) : []
         merge.push({
-          name: dir,
-          type: fs.statSync(dirPath).isDirectory() ? 'folder' : 'file',
-          path: filePath,
+          name: child,
+          type: fs.statSync(childPath).isDirectory() ? 'folder' : 'file',
+          path: dirPath,
           children: children
         })
       }

@@ -12,18 +12,17 @@ import { PROJECT_BASE_PATH } from '../src.config'
 import { SNIPPET_TYPES } from '../snippet/constant'
 const SNIPPET_OUTPUT_PATH = getSnippetOutputPath(PROJECT_BASE_PATH)
 
-
-const chooseType = getChooseType()
-
+const chooseType = getChooseType().name
 
 let historySnippetJson = null
 if (chooseType !== 'ALL') {
   historySnippetJson = getHistoryData(chooseType)
   deleteSnippet(chooseType, SNIPPET_OUTPUT_PATH, historySnippetJson)
 } else {
-  SNIPPET_TYPES.filter(dir => dir !== 'ALL').forEach(type => {
-    if (getHistoryData(type)) {
-      historySnippetJson = merge(historySnippetJson || {}, getHistoryData(type))
+  SNIPPET_TYPES.filter(type => type.name !== 'ALL').forEach(type => {
+    const data = getHistoryData(type.name)
+    if (data) {
+      historySnippetJson = merge(historySnippetJson || {}, data)
     }
   })
 }

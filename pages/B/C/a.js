@@ -6,17 +6,17 @@ import { withGraphQlReduxSaga } from 'hoc/store.js'
 
 import WithApiStore from 'hoc/WithApiStore' // file://Users/kunsam/Desktop/project/npm/core-script/hoc/WithApiStore/index.js
 import AppLayout from 'layouts/AppLayout' // file://Users/kunsam/Desktop/project/npm/core-script/layouts/AppLayout/index.js
-import BCParser from 'parsers/parsers//B/C' // file://Users/kunsam/Desktop/project/npm/core-script/parsers/B/C/index.js
+import BCAParser from 'parsers/parsers/B/C/a.js' // file://Users/kunsam/Desktop/project/npm/core-script/parsers/B/C/a.js
 
-// [container] // file://Users/kunsam/Desktop/project/npm/core-script/containers/B/C/index.js
+// [container] // file://Users/kunsam/Desktop/project/npm/core-script/containers/B/C/A/index.js
 
 const WithApiStoreParser = WithApiStore(
-  BCParser,
+  BCAParser,
   // [查看可配置的请求]  // file://Users/kunsam/Desktop/project/npm/core-script/api/_apiMap.js
   []
 )
 
-const BCPage = ({
+const BCAPage = ({
   // 在这取出 getInitialProps 中 return 的数据 然后传给 WithApiStoreParser
   isServer,
   isMobile
@@ -27,7 +27,7 @@ const BCPage = ({
 )
 
 // [props对象] file://Users/kunsam/Desktop/project/npm/core-script/.assist/next/total.js
-BCPage.getInitialProps = async (props) => {
+BCAPage.getInitialProps = async (props) => {
 
   // [数据不存在则抓取] snippet: sls{api.shortcut} + dp{api.shortcut}
   // if (!fetchGetCommentsSuccess(props.store.getState())) {
@@ -44,4 +44,4 @@ BCPage.getInitialProps = async (props) => {
   }
 }
 
-export default withGraphQlReduxSaga(BCPage) // 在这使用graphQl业务
+export default withGraphQlReduxSaga(BCAPage) // 在这使用graphQl业务

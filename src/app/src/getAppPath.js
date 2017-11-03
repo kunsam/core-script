@@ -3,7 +3,13 @@ var upperFirst = require('lodash/upperFirst')
 
 export default (basePath, pagePath) => {
   let splitPaths = pagePath.split('/')
-  const containerDirPaths = splitPaths.map(a => upperFirst(a).replace(/\s/g, '').replace('.js', ''))
+  
+  const containerDirPaths = splitPaths
+    .filter(p => p !== 'index.js' && p !== 'index.scss')
+    .map(a => upperFirst(a)
+    .replace(/\s/g, '')
+    .replace('.js', ''))
+
   let lastPath = splitPaths.pop()
   let dirPaths = splitPaths.map(a => a.replace(/\s/g, '') && upperFirst(a))
   if (lastPath.indexOf('.') <= 0) { // 没有 .

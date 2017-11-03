@@ -31,13 +31,13 @@ import {
 // [引入组件] ipcp [引入高阶组件] iphoc [引入布局] iplo
 
 
-// [page] // file://Users/kunsam/Desktop/project/npm/core-script/pages/B/C/index.js
-// [parser] // file://Users/kunsam/Desktop/project/npm/core-script/parsers/B/C/index.js
+// [page] // file://Users/kunsam/Desktop/project/npm/core-script/pages/B/C/a.js
+// [parser] // file://Users/kunsam/Desktop/project/npm/core-script/parsers/B/C/a.js
 
-const BCContainer = ({
+const BCAContainer = ({
   
 }) => (
-  <div className="BCContainer">
+  <div className="BCAContainer">
     <style dangerouslySetInnerHTML={{ __html: require('./index.scss') }} />
   </div>
 )
@@ -45,9 +45,9 @@ const BCContainer = ({
 export default compose(
   pure,
   mapProps(props => {
-    // console.log(props, 'BCContainer');
+    // console.log(props, 'BCAContainer');
     return props
   }),
-  setDisplayName('BCContainer')
-)(BCContainer)
+  setDisplayName('BCAContainer')
+)(BCAContainer)
 

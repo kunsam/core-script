@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
 
-import getConfig from '../../src/getConfig'
+import getConfig, { getSnippetOutputPath } from '../../src/getConfig'
 import { getFilesTree, joinFilesName } from '../../../utils/file'
 import generateImportSnippet from '../../src/generateImportSnippet'
 import generateUsageSnippet from '../../src/generateUsageSnippet'
@@ -14,7 +14,9 @@ import generateSnippet from '../../src/generateSnippet'
 export default (basePath) => {
 
   const config = getConfig(basePath)
-  const { outputPath } = config.snippet
+
+  const OUTPUT_PATH = getSnippetOutputPath(basePath)
+
   console.log(chalk.yellow(`>> [member] 开始导出补全，tips: 若原有补全中有相同的补全，将会被直接覆盖`))
 
   let ALLSNIPPETS = {}
@@ -35,7 +37,7 @@ export default (basePath) => {
   
 
   generateSnippet({
-    outputPath,
+    outputPath: OUTPUT_PATH,
     snippet: ALLSNIPPETS,
     dataPath: path.join(__dirname, '../../data/member', `${basePath.split('/').join('-')}.json`)
   })

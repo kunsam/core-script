@@ -31,12 +31,6 @@ export default function getConfig(basePath) {
     config = merge(userConfig,  defaultConfig)
     config.snippet.usage.rules = mergedResult
     config.projectPath = basePath
-
-    const configSnippetPath = config.snippet.outputPath
-    if (!configSnippetPath) throw Error(`未配置输出路径 > .core-config/member/config.js > snippet.outputPath`)
-    config.snippet.outputPath = resolvePath(basePath, configSnippetPath)
-    if (!fs.existsSync(config.snippet.outputPath)) throw Error(`补全读取路径不存在 ${config.snippet.outputPath}`)
-
   } else {
     console.log(`>>> 不存在用户自定义成员配置，将使用默认配置 ${userConfigPath}，或使用 core init-core 配置`);
   }
@@ -44,8 +38,8 @@ export default function getConfig(basePath) {
 }
 
 export function getSnippetOutputPath (basePath) {
-  const CoreConfig = require(path.join(basePath, `.core-config/core.config`)).default
-  const snippetOutputPath = resolvePath(basePath, CoreConfig.snippet.outputPath)
+  const CoreConfig = require(path.join(basePath, `.core-config/core.config`))
+  return resolvePath(basePath, CoreConfig.snippet.outputPath)
 }
 
 function resolvePath(basePath, outputPath) {

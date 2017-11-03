@@ -6,21 +6,24 @@ const chalk = require('chalk')
 const fetch = require('isomorphic-unfetch')
 
 
-import { resolvePath } from '../../src/path'
+import { getSnippetOutputPath } from '../../src/getConfig'
 import createSnippet from './createSnippet'
 import processApiList from './processApiList'
 import generateSnippet from '../../src/generateSnippet'
 
+
 export default (basePath) => {
 
-  const config = require(path.join(basePath, '.core-config/restApi/config')).default
+  const SNIPPET_OUTPUT_PATH = getSnippetOutputPath(basePath)
+
+  const config = require(path.join(basePath, '.core-config/restApi/config'))
   console.log(chalk.yellow(`>> [restApi] 开始导出补全，tips: 若原有补全中有相同的补全，将会被直接覆盖`))
 
   if (config.debug) {
     console.log(chalk.grey('>>> 使用 [mockData] 生成补全'))
 
     generateSnippet({
-      outputPath: resolvePath(basePath, config.outputPath.snippet),
+      outputPath: SNIPPET_OUTPUT_PATH,
       snippet: createSnippet(processApiList(config.mockData, config.authField), basePath),
       dataPath: path.join(__dirname, '../../data/restApi', `${basePath.split('/').join('-')}.json`)
     })
@@ -34,7 +37,7 @@ export default (basePath) => {
         console.log(data);
         // 这里还未完善
         generateSnippet({
-          outputPath: resolvePath(basePath, config.outputPath.snippet),
+          outputPath: SNIPPET_OUTPUT_PATH,
           snippet: createSnippet(processApiList(data, config.authField), basePath),
           dataPath: path.join(__dirname, '../../data/restApi', `${basePath.split('/').join('-')}.json`)
         })

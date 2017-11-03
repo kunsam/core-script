@@ -21,7 +21,7 @@ const appIndex = getAppIndex()
 
 const app = joinedFiles[appIndex - 1]
 
-expandApp(basePath, app)
+expandApp(PROJECT_BASE_PATH, app)
 
 function getAppIndex() {
   let result = null

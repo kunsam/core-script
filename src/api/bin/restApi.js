@@ -7,7 +7,6 @@ const fetch = require('isomorphic-unfetch')
 
 const processApiList = require('./processApiList')
 
-import { resolvePath } from '../../src/path'
 import createApi from './createApi'
 
 
@@ -32,11 +31,7 @@ export default (basePath) => {
     })
   }
 
-
-
   let ALLSNIPPETS = {}
-
-
 
   generateSnippet({
     outputPath,
@@ -49,12 +44,10 @@ export default (basePath) => {
 }
 
 
-
+const find = require('lodash/find')
 const createApiMap = require('../src/setApiMap.js')
 const createApiRedux = require('../src/apiRedux.js')
 
-
-const find = require('lodash/find')
 
 function updateApi(apiData) {
   const apiList = processApiList(apiData, config)
