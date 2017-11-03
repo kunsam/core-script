@@ -15,9 +15,8 @@ export default (basePath) => {
 
   const config = getConfig(basePath)
   const { outputPath } = config.snippet
+  console.log(chalk.yellow(`>> [member] 开始导出补全，tips: 若原有补全中有相同的补全，将会被直接覆盖`))
 
-
-  console.log(chalk.yellow(`>> 开始导出成员补全，tips: 若原有补全中有相同的补全，将会被直接覆盖\n`))
   let ALLSNIPPETS = {}
   config.snippet.import.paths.forEach(member => {
     const joinedFiles = joinFilesName(getFilesTree(path.join(basePath, `./${member.path}`))).filter(j => /\.(js|jsx)$/.test(j.name))

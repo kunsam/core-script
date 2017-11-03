@@ -26,7 +26,17 @@ const choose = loopInput('创建哪类的补全？输入序号: ', (input) => {
   if (choose && choose > 0 && choose <= snippetDirs.length) return choose - 1
 })
 
+const snippetType = snippetDirs[choose]
 
-const generateSnippet = require(`../snippet/bin/${snippetDirs[choose]}/create.js`).default
+if (snippetType !== 'ALL') {
+  createSnippet(snippetType)
+} else {
+  snippetDirs
+    .filter(dir => dir !== 'ALL')
+    .forEach(type => { createSnippet(type) })
+}
 
-const snippet = generateSnippet(basePath)
+function createSnippet(snippetType) {
+  const doCreate = require(`../snippet/bin/${snippetType}/create.js`).default
+  doCreate(basePath)
+}
