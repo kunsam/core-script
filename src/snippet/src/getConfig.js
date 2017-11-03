@@ -2,14 +2,15 @@
 
 
 const fs = require('fs')
+const path = require('path')
 const merge = require('lodash/merge')
 const find = require('lodash/find')
-import { resolvePath } from './path'
+
 
 export default function getConfig(basePath) {
   const defaultConfig = require('../default.config.js')
   let config = defaultConfig
-  const userConfigPath = `${basePath}/.core-config/member/member.config.js`
+  const userConfigPath = `${basePath}/.core-config/member/config.js`
   if (fs.existsSync(userConfigPath)) {
     const userConfig = require(userConfigPath)
     const userSnipperUsageRules =
@@ -32,7 +33,7 @@ export default function getConfig(basePath) {
     config.projectPath = basePath
 
     const configSnippetPath = config.snippet.outputPath
-    if (!configSnippetPath) throw Error(`未配置输出路径 > .core-config/member/member.config.js > snippet.outputPath`)
+    if (!configSnippetPath) throw Error(`未配置输出路径 > .core-config/member/config.js > snippet.outputPath`)
     config.snippet.outputPath = resolvePath(basePath, configSnippetPath)
     if (!fs.existsSync(config.snippet.outputPath)) throw Error(`补全读取路径不存在 ${config.snippet.outputPath}`)
 
@@ -40,4 +41,14 @@ export default function getConfig(basePath) {
     console.log(`>>> 不存在用户自定义成员配置，将使用默认配置 ${userConfigPath}，或使用 core init-core 配置`);
   }
   return config
+}
+
+export function getSnippetOutputPath (basePath) {
+  const CoreConfig = require(path.join(basePath, `.core-config/core.config`)).default
+  const snippetOutputPath = resolvePath(basePath, CoreConfig.snippet.outputPath)
+}
+
+function resolvePath(basePath, outputPath) {
+  if (!outputPath) throw Error(`不存在补全输出路径，请定义${outputPath}`)
+  return outputPath.charAt(0) === '/' ? outputPath : path.join(basePath, outputPath)
 }

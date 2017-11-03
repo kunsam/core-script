@@ -6,24 +6,21 @@ const chalk = require('chalk')
 import loggerList from '../utils/loggerList'
 import getUI from '../xmind/ui/generateUi'
 
-import config from '../config'
-const { basePath } = config
+import { PROJECT_BASE_PATH } from '../src.config'
 
-const userConfigPath = path.join(basePath, '.core-config/core.config.js')
+const userConfigPath = path.join(PROJECT_BASE_PATH, '.core-config/core.config.js')
 if (!fs.existsSync(userConfigPath)) throw Error('请在项目根路径下配置.core-config/core.config.js 或使用 init-core')
 const userConfig = require(userConfigPath)
 
 const { xmind } = userConfig
 
-// projectRootPath: config.basePath
 console.log(chalk.yellow('>>>友情提示：执行命令的路径必须为项目的根路径，否则会存在路径错误\n'))
 
-// console.log(xmind, basePath, 'config');
 
 if (!xmind.ui.path) throw Error('请配置 xmind.ui.path ')
 
-const sourcePath = path.join(basePath, xmind.ui.path)
-const outputPath = path.join(basePath, xmind.ui.output || xmind.ui.path)
+const sourcePath = path.join(PROJECT_BASE_PATH, xmind.ui.path)
+const outputPath = path.join(PROJECT_BASE_PATH, xmind.ui.output || xmind.ui.path)
 
 if (!fs.existsSync(sourcePath)) throw Error(`[${sourcePath}] 配置路径不存在，请确认xmind.ui.path`)
 
@@ -39,7 +36,7 @@ loggerList(uiFiles, '扫描到的xmind的文件')
 const UIs = getUI(uiFiles, sourcePath)
 
 // todo后期暴露创建元件方法，让这里直接创建出组件
-const componentPath = path.join(basePath, 'components')
+const componentPath = path.join(PROJECT_BASE_PATH, 'components')
 
 UIs.forEach(app => {
   const appPath = path.join(outputPath, app.name)

@@ -1,9 +1,9 @@
 import commander from 'commander'
-import config from '../config'
+import { PACKAGE_VERSION } from '../src.config'
 import chalk from 'chalk'
 
 commander
-  .version(config.version);
+  .version(PACKAGE_VERSION);
 
 
 const CORE = [

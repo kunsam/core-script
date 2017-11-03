@@ -9,8 +9,7 @@ var ncp = require('copy-paste')
 import getComponentSnippet from '../template/common/snippet/import/component'
 import generateComponent from '../app/src/generateComponent'
 
-import config from '../config'
-const { basePath } = config
+import { PROJECT_BASE_PATH } from '../src.config'
 
 const dirs = fs.readdirSync(path.join(__dirname, '../template/component'))
 
@@ -27,7 +26,7 @@ const compPath = readlineSync.question('\n输入组件的路径(a/b/c): ')
 if (!compPath) {
   console.log(chalk.red('未输入或输入错误!'))
 } else {
-  const component = generateComponent(basePath, compPath, { type: compType })
+  const component = generateComponent(PROJECT_BASE_PATH, compPath, { type: compType })
   ncp.copy(getComponentSnippet(component).str, function () {
     console.log(chalk.yellow('>>> 已复制引用补全到剪切板\n'))
   })

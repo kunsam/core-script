@@ -8,13 +8,11 @@ var readlineSync = require('readline-sync')
 import { getFilesTree, joinFilesName } from '../utils/file'
 import expandApp from '../app/expand'
 
-import config from '../config'
-const { basePath } = config
+import { PROJECT_BASE_PATH } from '../src.config'
 
-const joinedFiles = joinFilesName(getFilesTree(path.join(basePath, 'pages')))
+const joinedFiles = joinFilesName(getFilesTree(path.join(PROJECT_BASE_PATH, 'pages')))
   .map(file => file.fullImportPath).filter(file => file.split('/').length > 1)
 
-console.log(joinFilesName(getFilesTree(path.join(basePath, 'pages'))), 'asdsad');
 
 console.log('可展开的app有:')
 joinedFiles.forEach((file, index) => { console.log(`${index + 1}.${file}`) })

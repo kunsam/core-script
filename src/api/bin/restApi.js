@@ -13,7 +13,6 @@ import createApi from './createApi'
 
 export default (basePath) => {
 
-
   const config = require(path.join(basePath, './core-config/restApi/config'))
 
   if (config.debug) {

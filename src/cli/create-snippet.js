@@ -5,9 +5,7 @@ var readlineSync = require('readline-sync')
 var shell = require('shelljs')
 
 import loopInput from '../app/src/loopInput'
-import config from '../config'
-const { basePath } = config
-
+import { PROJECT_BASE_PATH } from '../src.config'
 
 const snippetDirs = fs.readdirSync(path.join(__dirname, '../snippet/bin'))
 const COMMENT_MAP = {
@@ -38,5 +36,5 @@ if (snippetType !== 'ALL') {
 
 function createSnippet(snippetType) {
   const doCreate = require(`../snippet/bin/${snippetType}/create.js`).default
-  doCreate(basePath)
+  doCreate(PROJECT_BASE_PATH)
 }

@@ -11,11 +11,11 @@ import { getDevelopData, getWorkflowModel } from '../xmind/plan/getDevelopData'
 import { createProjectMardDown } from '../xmind/plan/createProjectMardDown'
 import { createWorkflowMarkDown } from '../xmind/plan/createWorkflowMarkDown'
 
-import config from '../config'
+import { PROJECT_BASE_PATH } from '../src.config'
 import xmindConfig from '../xmind/plan/xmind-config'
-const { basePath } = config
 
-const userConfigPath = path.join(basePath, '.core-config/core.config.js')
+
+const userConfigPath = path.join(PROJECT_BASE_PATH, '.core-config/core.config.js')
 if (!fs.existsSync(userConfigPath)) throw Error('请在项目根路径下配置.core-config/core.config.js 或使用 init-core')
 const userConfig = require(userConfigPath)
 const { xmind } = userConfig
@@ -24,7 +24,7 @@ const { timeField, seriesTime, workflowModel, specialSymbolMap, difficultyField 
 
 if (!xmind.plan.path) throw Error('请配置 xmind.plan.path ')
 
-const sourcePath = path.join(basePath, xmind.plan.path)
+const sourcePath = path.join(PROJECT_BASE_PATH, xmind.plan.path)
 
 if (!fs.existsSync(sourcePath)) throw Error(`[${sourcePath}] 配置路径不存在，请确认xmind.plan.path`)
 
