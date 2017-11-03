@@ -30,5 +30,3 @@ const choose = loopInput('创建哪类的补全？输入序号: ', (input) => {
 const generateSnippet = require(`../snippet/bin/${snippetDirs[choose]}/create.js`).default
 
 const snippet = generateSnippet(basePath)
-
-// console.log(choose, 'choose');

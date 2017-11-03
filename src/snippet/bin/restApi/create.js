@@ -1,36 +1,42 @@
 
 
-const fs = require('fs')
+const fs = require('fs-extra')
 const path = require('path')
 const chalk = require('chalk')
+const fetch = require('isomorphic-unfetch')
 
-import getConfig from '../../src/getConfig'
 
-
+import { resolvePath } from '../../src/path'
+import createSnippet from './createSnippet'
+import processApiList from './processApiList'
+import generateSnippet from '../../src/generateSnippet'
 
 export default (basePath) => {
-
-  const config = getConfig(basePath)
-  const { outputPath } = config.snippet
-
-
-
-  let ALLSNIPPETS = {}
-
-
-
-  generateSnippet({
-    outputPath,
-    snippet: ALLSNIPPETS,
-    dataPath: path.join(__dirname, '../../data/restApi', `${basePath.split('/').join('-')}.json`)
-  })
-
-
-
+  const config = require(path.join(basePath, '.core-config/restApi/config')).default
+  if (config.debug) {
+    console.log(chalk.yellow('>>> 使用 [mockData] 生成补全 \n'))
+    generateSnippet({
+      outputPath: resolvePath(basePath, config.outputPath.snippet),
+      snippet: createSnippet(processApiList(config.mockData, config.authField), basePath),
+      dataPath: path.join(__dirname, '../../data/restApi', `${basePath.split('/').join('-')}.json`)
+    })
+  } else {
+    fetch(config.src)
+    .then( r => r ) // .json() )
+    .then( data => {
+      if (data && data.length) {
+        console.log(chalk.yellow('>>> 请求数据正确，开始导出补全\n'));
+        console.log(data);
+        // 这里还未完善
+        generateSnippet({
+          outputPath: resolvePath(basePath, config.outputPath.snippet),
+          snippet: createSnippet(processApiList(data, config.authField), basePath),
+          dataPath: path.join(__dirname, '../../data/restApi', `${basePath.split('/').join('-')}.json`)
+        })
+      } else {
+        throw Error('请求数据出错，请检查')
+      }
+    })
+  }
 }
-
-
-
-
-
 
