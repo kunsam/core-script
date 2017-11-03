@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/delete-snippet.js"
+    "dot": "NODE_ENV=node babel-node src/cli/select-snippet.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -67,7 +67,7 @@
     "CORE-crsn": "bin/core-create-snippet.js",
     "CORE-delete-snippet": "bin/core-delete-snippet.js",
     "CORE-dlsn": "bin/core-delete-snippet.js",
-    "CORE-choose-snippet": "bin/core-choose-snippet.js",
-    "CORE-chsn": "bin/core-choose-snippet.js"
+    "CORE-choose-snippet": "bin/core-select-snippet.js",
+    "CORE-slsn": "bin/core-select-snippet.js"
   }
 }
