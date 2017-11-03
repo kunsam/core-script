@@ -30,6 +30,7 @@ import {
 // [补全] file://Users/kunsam/Desktop/project/npm/core-script/.assist/snippet.md
 // [引入组件] ipcp [引入高阶组件] iphoc [引入布局] iplo
 
+import SaZ from '../../../../components/Sa/Z' // file://Users/kunsam/Desktop/project/npm/core-script/components/Sa/Z/index.js
 
 // [page] // file://Users/kunsam/Desktop/project/npm/core-script/pages/B/C/a.js
 // [parser] // file://Users/kunsam/Desktop/project/npm/core-script/parsers/B/C/a.js

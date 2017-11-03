@@ -2,6 +2,7 @@
 
 var fs = require('fs')
 var path = require('path')
+var chalk = require('chalk')
 var upperFirst = require('lodash/upperFirst')
 var readlineSync = require('readline-sync')
 
@@ -14,8 +15,8 @@ const joinedFiles = joinFilesName(getFilesTree(path.join(PROJECT_BASE_PATH, 'pag
   .map(file => file.fullImportPath).filter(file => file.split('/').length > 1)
 
 
-console.log('可展开的app有:')
-joinedFiles.forEach((file, index) => { console.log(`${index + 1}.${file}`) })
+console.log(chalk.magenta('\n-- 可展开的app有:'))
+joinedFiles.forEach((file, index) => { console.log(chalk.white(`${index + 1}.${file}`)) })
 
 const appIndex = getAppIndex()
 
