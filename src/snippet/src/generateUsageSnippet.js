@@ -61,6 +61,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
               // 补全的快捷键核心定义
               // ------------------------------------
               const componentName = component.default && component.default.displayName
+              
               const matchDisplayname = componentName && componentName.match(/\(((\w)*?)\)/g) || ''
               const displayName = matchDisplayname && matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')  || file.importName
               const memeberShortcut  = member.shortcut || toLower(`${member.path.slice(0, 1)}${member.path.slice(member.path.length - 1)}`)
