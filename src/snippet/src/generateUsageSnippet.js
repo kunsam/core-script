@@ -2,9 +2,9 @@ const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
 const find = require('lodash/find')
-const shell = require('shelljs')
 const toLower = require('lodash/toLower')
 const escapeRegExp = require('lodash/escapeRegExp')
+import { transform } from 'babel-core';
 
 export default function generateUsageSnippet(joinedFiles, config, member) {
   const removeFolder = joinedFiles.filter(file => file.type !== 'folder')
@@ -35,13 +35,14 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 const tmpFile = fs.readFileSync(file.absolutePath, 'utf-8')
                                   .replace(/require\(.+\)/g, '{}')
                 tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
-                tempCompilePath = path.join(file.absolutePath, '../', `./tmpCompile.js`)
-                fs.writeFileSync(tmpPath, tmpFile)
-                shell.exec(`babel ${tmpPath} --out-file ${tempCompilePath} --presets=es2015,react`)
+                const compileCode = transform(tmpFile, {
+                  presets: [ "es2017", "stage-3", "react" ]
+                }).code
+                fs.writeFileSync(tmpPath, compileCode)
                 try {
                   component = require(tmpPath)
                 } catch (e) {
-                  console.log(chalk.red(`${file.absolutePath} 暂时无法解析 ${e} \n`));
+                  console.log(chalk.red(`${file.absolutePath} 暂时无法解析 error: ${e} \n`));
                   component = {}
                 }
               }
@@ -78,7 +79,6 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
       }
     }
     if(fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath)
-    if(fs.existsSync(tempCompilePath)) fs.unlinkSync(tempCompilePath)
   })
   return {
     snippet: memberSnippets,
