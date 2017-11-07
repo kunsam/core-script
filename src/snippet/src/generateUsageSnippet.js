@@ -35,17 +35,13 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 const tmpFile = fs.readFileSync(file.absolutePath, 'utf-8')
                                   .replace(/require\(.+\)/g, '{}')
                 const compileCode = transform(tmpFile, {
-                  presets: ["latest", "es2017", "stage-3", "react"],
-                  plugins: [
-                    [
-                      "babel-plugin-transform-require-ignore",
-                      {
-                        "extensions": [".js"]
-                      }
-                    ]
-                  ]
+                  presets: ["latest", "es2017", "stage-3", "react"]
                 }).code
-                const resolvePathCode = compileCode.replace(/'components\//g, `'${path.join(config.projectPath, 'components')}/`)
+                const resolvePathCode = compileCode
+                  .replace(/'components\//g, `'${path.join(config.projectPath, 'components')}/`)
+                  .replace(/'layouts\//g, `'${path.join(config.projectPath, 'layouts')}/`)
+                  .replace(/'hoc\//g, `'${path.join(config.projectPath, 'hoc')}/`)
+
                 tmpPath = path.join(file.absolutePath, '../', `./tmp${Math.random().toFixed(5)}.js`)
                 fs.writeFileSync(tmpPath, resolvePathCode)
                 try {
@@ -62,9 +58,9 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
               // ------------------------------------
               // 补全的快捷键核心定义
               // ------------------------------------
-              const componentName = component.default && component.default.displayName || file.importName
+              const componentName = component.default && component.default.displayName
               const matchDisplayname = componentName.match(/\(((\w)*?)\)/g)
-              const displayName = matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')
+              const displayName = matchDisplayname && matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')  || file.importName
               const memeberShortcut  = member.shortcut || toLower(`${member.path.slice(0, 1)}${member.path.slice(member.path.length - 1)}`)
               file.snippetPrefix = `${config.snippet.usage.modeShortcut || 'use'}${memeberShortcut}${file.shortcut}`
               const snippet = loader({
