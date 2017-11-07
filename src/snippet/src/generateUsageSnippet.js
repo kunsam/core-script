@@ -34,7 +34,6 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 if (file.name === 'index.js') file.absolutePath = path.join(file.absolutePath, './index.js')
                 const tmpFile = fs.readFileSync(file.absolutePath, 'utf-8')
                                   .replace(/require\(.+\)/g, '{}')
-                tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
                 const compileCode = transform(tmpFile, {
                   presets: ["latest", "es2017", "stage-3", "react"],
                   plugins: [
@@ -47,6 +46,9 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                   ]
                 }).code
                 const resolvePathCode = compileCode.replace(/'components\//g, `'${path.join(config.projectPath, 'components')}/`)
+
+                tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
+
                 fs.writeFileSync(tmpPath, resolvePathCode)
                 try {
                   component = require(tmpPath)
@@ -61,7 +63,8 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
               // ------------------------------------
               // 补全的快捷键核心定义
               // ------------------------------------
-              const matchDisplayname = component.default.displayName.match(/\(((\w)*?)\)/g)
+              const componentName = component.default && component.default.displayName || file.importName
+              const matchDisplayname = componentName.match(/\(((\w)*?)\)/g)
               const displayName = matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')
               const memeberShortcut  = member.shortcut || toLower(`${member.path.slice(0, 1)}${member.path.slice(member.path.length - 1)}`)
               file.snippetPrefix = `${config.snippet.usage.modeShortcut || 'use'}${memeberShortcut}${file.shortcut}`
@@ -87,7 +90,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
         }
       }
     }
-    // if(fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath)
+    if(fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath)
   })
   return {
     snippet: memberSnippets,
