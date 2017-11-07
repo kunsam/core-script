@@ -1,13 +1,4 @@
 {
-  "import components SaZ": 1,
-  "import components ZS": 1,
-  "import components ZX": 1,
-  "import containers AZX": 1,
-  "import containers BC": 1,
-  "import layouts AXC": 1,
-  "import parsers AZX": 1,
-  "import parsers BC": 1,
-  "use components SaZ": 1,
-  "use components ZS": 1,
-  "use components ZX": 1
+  "import components ActionSheet": 1,
+  "use components ActionSheet": 1
 }

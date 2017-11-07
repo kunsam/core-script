@@ -26,7 +26,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
           const loader = require(loaderPath)
           if (typeof(loader) === 'function') { // 过滤掉空文件
             file.absolutePath = path.join(config.projectPath, `./${member.path}/${file.importPath}`)
-            let component = { descrition: '该文件非Js文件，没有引入实体', default: {}} 
+            let component = { descrition: '该文件非Js文件，没有引入实体', default: null } 
             if (file.name.split('.') && file.name.split('.')[1] === 'js') { // js文件引入文件内容
               if (file.importPath) {
                 if (file.name === 'index.js') file.absolutePath = path.join(file.absolutePath, './index.js')
@@ -42,7 +42,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 }
               }
             }
-            if (component) {
+            if (component && component.default) {
               file.root = `${member.path}/`
               // ------------------------------------
               // 补全的快捷键核心定义
@@ -73,7 +73,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
         }
       }
     }
-    if(tmpPath) fs.unlinkSync(tmpPath)
+    if(fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath)
   })
   return {
     snippet: memberSnippets,
