@@ -12,6 +12,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
   let members = []
   removeFolder.forEach(file => {
     let tmpPath = ''
+    let tempCompilePath = ''
     const fullName = `${file.importPath}${file.name === 'index.js' ? '/index.js' : ''}` 
     const findRuleMatchFile = find(config.snippet.usage.rules, rule => rule.test.test(file.name))
     if (findRuleMatchFile) { // 匹配正则表达式
@@ -34,8 +35,9 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 const tmpFile = fs.readFileSync(file.absolutePath, 'utf-8')
                                   .replace(/require\(.+\)/g, '{}')
                 tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
+                tempCompilePath = path.join(file.absolutePath, '../', `./tmpCompile.js`)
                 fs.writeFileSync(tmpPath, tmpFile)
-                shell.exec(`babel ${tmpPath} --out-file ${path.join(file.absolutePath, '../', `./tmpcompile.js`)} --presets=es2015,react`)
+                shell.exec(`babel ${tmpPath} --out-file ${tempCompilePath} --presets=es2015,react`)
                 try {
                   component = require(tmpPath)
                 } catch (e) {
@@ -76,6 +78,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
       }
     }
     if(fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath)
+    if(fs.existsSync(tempCompilePath)) fs.unlinkSync(tempCompilePath)
   })
   return {
     snippet: memberSnippets,
