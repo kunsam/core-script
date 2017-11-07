@@ -87,7 +87,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
         }
       }
     }
-    if(fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath)
+    // if(fs.existsSync(tmpPath)) fs.unlinkSync(tmpPath)
   })
   return {
     snippet: memberSnippets,
