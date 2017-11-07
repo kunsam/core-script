@@ -17,5 +17,4 @@ export default (type, outputPath, historySnippetJson) => {
   }
   fs.writeFileSync(outputPath, `${JSON.stringify(ALLSNIPPETS, null, 2)}`)
   console.log(chalk.yellow(`\n>> [${type}] 补全更新完成: ${outputPath}\n`))
-  fs.unlinkSync(dataPath)
 }

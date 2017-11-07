@@ -14,21 +14,24 @@ const SNIPPET_OUTPUT_PATH = getSnippetOutputPath(PROJECT_BASE_PATH)
 
 const chooseType = getChooseType().name
 
-let historySnippetJson = null
+
 if (chooseType !== 'ALL') {
-  historySnippetJson = getHistoryData(chooseType)
-  deleteSnippet(chooseType, SNIPPET_OUTPUT_PATH, historySnippetJson)
+  const historyData = getHistoryData(chooseType)
+  deleteSnippet(chooseType, SNIPPET_OUTPUT_PATH, historyData.json)
+  fs.unlinkSync(historyData.path)
 } else {
+  let historySnippetJson = null
   SNIPPET_TYPES.filter(type => type.name !== 'ALL').forEach(type => {
     const data = getHistoryData(type.name)
     if (data) {
-      historySnippetJson = merge(historySnippetJson || {}, data)
+      historySnippetJson = merge(historySnippetJson || {}, data.json)
+      fs.unlinkSync(data.path)
     }
   })
+  deleteSnippet(chooseType, SNIPPET_OUTPUT_PATH, historySnippetJson)
 }
 
 
-deleteSnippet(chooseType, SNIPPET_OUTPUT_PATH, historySnippetJson)
 
 
 function getChooseType () {
@@ -57,7 +60,10 @@ function getHistoryData (snippetType) {
     if (choose && choose > 0 && choose <= historyDatas.length) return choose - 1
   })
   const historySnippetJson = require(`${historyDataPath}/${historyDatas[choose2]}`)
-  return historySnippetJson
+  return {
+    path: `${historyDataPath}/${historyDatas[choose2]}`,
+    json: historySnippetJson
+  }
   
 }
 
