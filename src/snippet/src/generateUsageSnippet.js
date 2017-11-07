@@ -36,7 +36,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                                   .replace(/require\(.+\)/g, '{}')
                 tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
                 const compileCode = transform(tmpFile, {
-                  presets: [ "es2017", "stage-3", "react" ]
+                  presets: ["latest", "es2017", "stage-3", "react"]
                 }).code
                 fs.writeFileSync(tmpPath, compileCode)
                 try {

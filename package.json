@@ -20,6 +20,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-preset-es2017": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
     "chalk": "^2.3.0",
@@ -40,7 +41,6 @@
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-require-ignore": "^0.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-latest": "^6.24.1",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "recompose": "^0.26.0"
