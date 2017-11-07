@@ -37,6 +37,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 const compileCode = transform(tmpFile, {
                   presets: ["latest", "es2017", "stage-3", "react"]
                 }).code
+                // 要整个文件夹~
                 const resolvePathCode = compileCode
                   .replace(/'components\//g, `'${path.join(config.projectPath, 'components')}/`)
                   .replace(/'layouts\//g, `'${path.join(config.projectPath, 'layouts')}/`)
@@ -47,8 +48,9 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 try {
                   component = require(tmpPath)
                 } catch (e) {
+                  // 先在暂时无法做全解析，比如一个文件中引入另外一个组件，另外一个组件也需要解析
                   console.log(chalk.red(`${file.absolutePath} \n 暂时无法解析 error: ${e} \n`))
-                  fs.writeFileSync(path.join(file.absolutePath, '../', `error.js`), resolvePathCode)
+                  // fs.writeFileSync(path.join(file.absolutePath, '../', `error.js`), resolvePathCode)
                   component = {}
                 }
               }
@@ -59,7 +61,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
               // 补全的快捷键核心定义
               // ------------------------------------
               const componentName = component.default && component.default.displayName
-              const matchDisplayname = componentName.match(/\(((\w)*?)\)/g)
+              const matchDisplayname = componentName && componentName.match(/\(((\w)*?)\)/g) || ''
               const displayName = matchDisplayname && matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')  || file.importName
               const memeberShortcut  = member.shortcut || toLower(`${member.path.slice(0, 1)}${member.path.slice(member.path.length - 1)}`)
               file.snippetPrefix = `${config.snippet.usage.modeShortcut || 'use'}${memeberShortcut}${file.shortcut}`
