@@ -61,7 +61,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
               // 补全的快捷键核心定义
               // ------------------------------------
               const componentName = component.default && component.default.displayName
-              
+
               const matchDisplayname = componentName && componentName.match(/\(((\w)*?)\)/g) || ''
               const displayName = matchDisplayname && matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')  || file.importName
               const memeberShortcut  = member.shortcut || toLower(`${member.path.slice(0, 1)}${member.path.slice(member.path.length - 1)}`)
@@ -72,7 +72,6 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                 filePath: file.absolutePath
               })
               if (snippet) {
-                // 这里使用了recompose displayName 字段 看看有没有多种情况
                 memberSnippets[`use ${member.path} ${displayName || file.importName}`] = snippet
                 members.push(file)
                 console.log(chalk.cyan(`得到了${member.path} -> ${fullName}的组件使用补全`))
