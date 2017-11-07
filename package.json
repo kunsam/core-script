@@ -14,7 +14,7 @@
     "clean": "rimraf lib",
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
-    "dot": "NODE_ENV=node babel-node src/cli/init-core.js"
+    "dot": "NODE_ENV=node babel-node src/cli/open-assist.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -72,6 +72,10 @@
     "CORE-create-rest-api-redux-flow": "bin/core-create-rest-api-redux-flow.js",
     "CORE-crarf": "bin/core-create-rest-api-redux-flow.js",
     "CORE-create-graphql-api": "bin/core-create-graphql-api.js",
-    "CORE-cgqa": "bin/core-create-graphql-api.js"
+    "CORE-cgqa": "bin/core-create-graphql-api.js",
+    "CORE-check-project-framework": "bin/core-check-project-framework.js",
+    "CORE-cprfr": "bin/core-check-project-framework.js",
+    "CORE-open-assist": "bin/core-open-assist.js",
+    "CORE-opas": "bin/core-open-assist.js"
   }
 }

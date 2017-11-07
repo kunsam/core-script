@@ -12,7 +12,8 @@ const CORE = [
     children: [
       { name: 'init-project', abbr: 'ipt', comment: 'open the guide of init a project [打开项目初始引导]' },
       { name: 'init-core', abbr: 'icr', comment: 'create core.config.js [创建配置文件]' },
-      { name: 'xmind-plan', abbr: 'xplan', comment: 'generates project plan files from xmind tree [根据xmind创建项目评估表和工作流表]' }
+      { name: 'xmind-plan', abbr: 'xplan', comment: 'generates project plan files from xmind tree [根据xmind创建项目评估表和工作流表]' },
+      { name: 'check-project-framework', abbr: 'cprfr', comment: 'check project framework 查看项目架构说明' },
     ]
   },
   {
@@ -26,9 +27,9 @@ const CORE = [
   {
     class: '补全类',
     children: [
-      { name: 'create-snippet', abbr: 'csni', comment: 'create snippet [创建项目补全]' },
-      { name: 'delete-snippet', abbr: 'dsni', comment: 'delete snippet [删除项目补全]' },
-      { name: 'set-snippet', abbr: 'ssni', comment: 'set snippet range [设置项目补全范围]' },
+      { name: 'create-snippet', abbr: 'crsn', comment: 'create snippet [创建项目补全]' },
+      { name: 'delete-snippet', abbr: 'dlsn', comment: 'delete snippet [删除项目补全]' },
+      { name: 'set-snippet', abbr: 'slsn', comment: 'set snippet range [设置项目补全范围]' },
     ]
   },
   {
@@ -64,11 +65,10 @@ CORE.forEach(c => {
 commander.on('--help', function(){
   console.log('\n')
   CORE.forEach(c => {
-    console.log(chalk.blue(`-- ${c.class}`))
+    console.log(chalk.blue(`--| ${c.class} | --`))
     c.children.forEach((data, index) => {
-      console.log(`${index + 1}.[${data.name}] abbr: `, chalk.yellow(`<core ${data.abbr}>`), data.comment)
+      console.log(`${index + 1}.[${data.name}] abbr: `, chalk.yellow(`[core ${data.abbr}]`), data.comment)
     })
-    console.log('\n');
   })
 })
 

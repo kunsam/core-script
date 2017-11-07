@@ -94,19 +94,19 @@ function generateApiRedux(apiList, config, basePath) {
 
   originActionList.forEach(fileName => {
     if (!find(apiList, api => `${api.key}.js` === fileName)) {
-      console.log(chalk.cyan(`[action/list] ${fileName}在api列表中不存在，将删除该文件\n`));
+      console.log(chalk.cyan(`[action/list] ${fileName}在api列表中不存在，将删除该文件`));
       fs.unlinkSync(path.join(actionListDir, fileName))
     }
   })
   originSagaList.forEach(fileName => {
     if (!find(apiList, api => `${api.key}.js` === fileName)) {
-      console.log(chalk.cyan(`[saga/list] ${fileName}在api列表中不存在，将删除该文件\n`));
+      console.log(chalk.cyan(`[saga/list] ${fileName}在api列表中不存在，将删除该文件`));
       fs.unlinkSync(path.join(sagaListDir, fileName))
     }
   })
   originSelectorList.forEach(fileName => {
     if (!find(apiList, api => `${api.key}.js` === fileName)) {
-      console.log(chalk.cyan(`[selector/list] ${fileName}在api列表中不存在，将删除该文件\n`));
+      console.log(chalk.cyan(`[selector/list] ${fileName}在api列表中不存在，将删除该文件`));
       fs.unlinkSync(path.join(selectorListDir, fileName))
     }
   })
