@@ -85,27 +85,27 @@ const ActionSheet = ({
 
 
 export const propTypes =  {
-    list: PropTypes.arrayOf(PropTypes.shape({
-  
-      id: PropTypes.string.isRequired,
-  
-      pages: PropTypes.number.isRequired,
-  
-      optionalEnum: PropTypes.oneOf(['News', 'Photos']),
-  
-      optionalUnion: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number
-      ]),
-  
-    })).isRequired
-  }
+  list: PropTypes.arrayOf(PropTypes.shape({
+
+    id: PropTypes.string.isRequired,
+
+    pages: PropTypes.number.isRequired,
+
+    optionalEnum: PropTypes.oneOf(['News', 'Photos']),
+
+    optionalUnion: PropTypes.oneOfType([
+      PropTypes.string,
+      PropTypes.number
+    ]),
+
+  })).isRequired
+}
 
 
 export default compose(
   pure,
   setDisplayName('ActionSheet'),
-  setPropTypes(PropTypes),
+  setPropTypes(propTypes),
   withState('activeVersion', 'setActiveVersion', ({ defaultVersion }) => defaultVersion),
   withHandlers({
     onOk: props => () => {

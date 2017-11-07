@@ -5,7 +5,6 @@ const find = require('lodash/find')
 const toLower = require('lodash/toLower')
 const escapeRegExp = require('lodash/escapeRegExp')
 import { transform } from 'babel-core';
-import PropTypes from 'prop-types'
 
 export default function generateUsageSnippet(joinedFiles, config, member) {
   const removeFolder = joinedFiles.filter(file => file.type !== 'folder')
