@@ -1,5 +1,5 @@
 
-const fs = require('fs')
+const fs = require('fs-extra')
 const chalk = require('chalk')
 
 export default ({ outputPath, snippet, dataPath }) => {
@@ -12,5 +12,6 @@ export default ({ outputPath, snippet, dataPath }) => {
   let memberSnippetKeys = {}
   Object.keys(snippet).map(key => { memberSnippetKeys[key] = 1 })
   // 一个项目的对应的basePath对应一个memberSnippet
+  fs.ensureFileSync(dataPath)
   fs.writeFileSync(dataPath, `${JSON.stringify(memberSnippetKeys, null, 2)}`)
 }

@@ -2,6 +2,7 @@ const fs = require('fs')
 const path = require('path')
 const chalk = require('chalk')
 const find = require('lodash/find')
+const shell = require('shelljs')
 const toLower = require('lodash/toLower')
 const escapeRegExp = require('lodash/escapeRegExp')
 
@@ -34,6 +35,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                                   .replace(/require\(.+\)/g, '{}')
                 tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
                 fs.writeFileSync(tmpPath, tmpFile)
+                shell.exec(`babel ${tmpPath} --out-file ${path.join(file.absolutePath, '../', `./tmpcompile.js`)} --presets=es2015,react`)
                 try {
                   component = require(tmpPath)
                 } catch (e) {
