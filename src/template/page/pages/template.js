@@ -33,7 +33,7 @@ const ${page.key} = ({
   </AppLayout>
 )
 
-// [props对象] file:/${path.join(basePath, '.assist/next/total.js')}
+// [props对象] file:/${path.join(basePath, 'assist/next/total.js')}
 ${page.key}.getInitialProps = async (props) => {
 
   // [数据不存在则抓取] snippet: sls{api.shortcut} + dp{api.shortcut}

@@ -9,7 +9,7 @@ console.log(chalk.yellow('>>> welcome to start a project'))
 console.log(chalk.yellow('>>> 即将为你打开项目初始须知'))
 
 const INIT_FILES = [
-  '.assist/project/get-start.md'
+  'assist/project/get-start.md'
 ]
 
 INIT_FILES.forEach(file => {
