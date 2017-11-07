@@ -46,14 +46,13 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                   ]
                 }).code
                 const resolvePathCode = compileCode.replace(/'components\//g, `'${path.join(config.projectPath, 'components')}/`)
-
-                tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
-
+                tmpPath = path.join(file.absolutePath, '../', `./tmp${Math.random().toFixed(5)}.js`)
                 fs.writeFileSync(tmpPath, resolvePathCode)
                 try {
                   component = require(tmpPath)
                 } catch (e) {
-                  console.log(chalk.red(`${file.absolutePath} 暂时无法解析 error: ${e} \n`));
+                  console.log(chalk.red(`${file.absolutePath} \n 暂时无法解析 error: ${e} \n`))
+                  fs.writeFileSync(path.join(file.absolutePath, '../', `error.js`), resolvePathCode)
                   component = {}
                 }
               }

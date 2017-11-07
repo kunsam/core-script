@@ -1,6 +1,10 @@
 {
   "import components ActionSheet": 1,
   "import components AmountCounter": 1,
+  "import components BottomButtonType1": 1,
+  "import components BottomButtonType2": 1,
   "use components ActionSheet": 1,
-  "use components AmountCounter": 1
+  "use components AmountCounter": 1,
+  "use components BottomButtonType1": 1,
+  "use components BottomButtonType2": 1
 }
