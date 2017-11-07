@@ -1,0 +1,6 @@
+{
+  "import components ActionSheet": 1,
+  "import components AmountCounter": 1,
+  "use components ActionSheet": 1,
+  "use components AmountCounter": 1
+}

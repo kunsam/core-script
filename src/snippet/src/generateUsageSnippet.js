@@ -5,6 +5,7 @@ const find = require('lodash/find')
 const toLower = require('lodash/toLower')
 const escapeRegExp = require('lodash/escapeRegExp')
 import { transform } from 'babel-core';
+import PropTypes from 'prop-types'
 
 export default function generateUsageSnippet(joinedFiles, config, member) {
   const removeFolder = joinedFiles.filter(file => file.type !== 'folder')
@@ -36,9 +37,18 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                                   .replace(/require\(.+\)/g, '{}')
                 tmpPath = path.join(file.absolutePath, '../', `./tmp.js`)
                 const compileCode = transform(tmpFile, {
-                  presets: ["latest", "es2017", "stage-3", "react"]
+                  presets: ["latest", "es2017", "stage-3", "react"],
+                  plugins: [
+                    [
+                      "babel-plugin-transform-require-ignore",
+                      {
+                        "extensions": [".js"]
+                      }
+                    ]
+                  ]
                 }).code
-                fs.writeFileSync(tmpPath, compileCode)
+                const resolvePathCode = compileCode.replace(/'components\//g, `'${path.join(config.projectPath, 'components')}/`)
+                fs.writeFileSync(tmpPath, resolvePathCode)
                 try {
                   component = require(tmpPath)
                 } catch (e) {
@@ -58,7 +68,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
               file.snippetPrefix = `${config.snippet.usage.modeShortcut || 'use'}${memeberShortcut}${file.shortcut}`
               const snippet = loader({
                 componentObj: file,
-                component: { displayName, propTypes: component.default.propTypes },
+                component: { displayName, propTypes: component.propTypes },
                 filePath: file.absolutePath
               })
               if (snippet) {

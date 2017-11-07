@@ -16,13 +16,16 @@ import Icon from 'antd/lib/icon'
 // import link from 'next/link' // file://Users/kunsam/web/order-pay-system/.assist/next/link.js
 // import dynamic from 'next/dynamic' // file://Users/kunsam/web/order-pay-system/.assist/next/dynamic.js
 
-import { pure, compose, withState, setDisplayName, withHandlers } from 'recompose'
+import { pure, compose, withState, setDisplayName, withHandlers, setPropTypes } from 'recompose'
 // [使用recompose] file://Users/kunsam/web/order-pay-system/scripts/Recompose/config.js
 
 // [补全] help: file://Users/kunsam/web/order-pay-system/.assist/snippet.md
 // [引入组件] ipcp
 // [引入高阶组件] iphoc
 // [引入布局] iplo
+import AmountCounter from 'components/AmountCounter' // file://Users/kunsam/web/order-pay-system/components/AmountCounter/index.js
+
+// 还要增加功能 dom生成/测试用例挂载/createComponent
 
 
 const ActionSheet = ({
@@ -79,9 +82,30 @@ const ActionSheet = ({
     </div>
   </div>
 
+
+
+export const propTypes =  {
+    list: PropTypes.arrayOf(PropTypes.shape({
+  
+      id: PropTypes.string.isRequired,
+  
+      pages: PropTypes.number.isRequired,
+  
+      optionalEnum: PropTypes.oneOf(['News', 'Photos']),
+  
+      optionalUnion: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number
+      ]),
+  
+    })).isRequired
+  }
+
+
 export default compose(
   pure,
   setDisplayName('ActionSheet'),
+  setPropTypes(PropTypes),
   withState('activeVersion', 'setActiveVersion', ({ defaultVersion }) => defaultVersion),
   withHandlers({
     onOk: props => () => {
