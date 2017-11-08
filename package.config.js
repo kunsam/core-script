@@ -2,7 +2,8 @@ export default [
   {
     class: '全局帮助类',
     children: [
-      { name: 'check-assist-center', abbr: 'cac', comment: 'check guide center [打开引导中心]' }
+      { name: 'check-assist-center', abbr: 'cac', comment: 'check guide center [打开引导中心]' },
+      { name: 'check-project-framework', abbr: 'cprfr', comment: 'check project framework [查看项目架构目录]' },
     ]
   },
   {
@@ -10,7 +11,7 @@ export default [
     children: [
       { name: 'init-core', abbr: 'icr', comment: 'create core.config.js [创建配置文件]' },
       { name: 'open-project-faster', abbr: 'prfa', comment: '快速打开项目 [创建配置文件]（选择后可以超链接进行配置）' },
-      { name: 'check-project-guide', abbr: 'cprgd', comment: 'check the guide of init a project [查看项目引导] 引导中心的子类' },
+      { name: 'check-project-guide', abbr: 'cprgd', comment: 'check the guide of develop project [查看项目引导] 引导中心的子类' },
       { name: 'xmind-plan', abbr: 'xplan', comment: 'generates project plan files from xmind tree [根据xmind创建项目评估表和工作流表]' }
     ]
   },
@@ -27,7 +28,7 @@ export default [
     children: [
       { name: 'create-snippet', abbr: 'crsn', comment: 'create snippet [创建项目补全]' },
       { name: 'delete-snippet', abbr: 'dlsn', comment: 'delete snippet [删除项目补全]' },
-      { name: 'set-snippet', abbr: 'slsn', comment: 'set snippet range [设置项目补全范围]' },
+      { name: 'select-snippet', abbr: 'slsn', comment: 'select snippet range [设置项目补全范围]' },
     ]
   },
   {

@@ -14,43 +14,38 @@ const srcCliMap = new Map(srcClis.map(bin => ([bin, 1])))
 
 const whiteList = new Map(CONFIG.bin.whiteList.map(d => ([d, 1])))
 
-console.log(binsMap, 'binsMap');
 
 let bin = {}
+console.log(chalk.white(`>>> 存在的文件将不会被替换，如要更新请删除\n`))
 
 CORE.forEach(data => {
   data.children.forEach(child => {
 
     bin[`CORE-${child.name}`] = `bin/core-${child.name}.js`
     bin[`CORE-${child.abbr}`] = `bin/core-${child.name}.js`
-  
+
     const binFileKey = `core-${child.name}.js`
     const srcCliFileKey = `${child.name}.js`
 
     const binFilePath = path.join(basePath, 'bin', binFileKey)
-    const srcCliFilePath = path.join(basePath, 'bin', srcCliFileKey)
+    const srcCliFilePath = path.join(basePath, 'src/cli', srcCliFileKey)
 
     if (binsMap.has(binFileKey)) {
-      console.log(chalk.red(`[${binFilePath}}] 已存在，如要更新请删除`))
       binsMap.delete(binFileKey)
     } else {
+      console.log(chalk.cyan(`>>> 创建了：[bin ${binFileKey}]`))
       fs.writeFileSync(binFilePath, `#!/usr/bin/env node\nrequire('../lib/cli/${srcCliFileKey}');`)
     }
 
     if (srcCliMap.has(srcCliFileKey)) {
-      console.log(chalk.red(`[${srcCliFilePath}}] 已存在，如要更新请删除`))
       srcCliMap.delete(srcCliFileKey)
     } else {
+      console.log(chalk.cyan(`>>> 创建了：[src/cli ${srcCliFileKey}]`))
       fs.writeFileSync(srcCliFilePath, `\n// $${child.comment}`)
     }
 
-
-
   })
 })
-
-
-// clear extra file
 
 binsMap.forEach((value, key) => {
   if (!whiteList.has(key)) {
@@ -66,13 +61,6 @@ srcCliMap.forEach((value, key) => {
   }
 })
 
-
 const packJson = require('../../package.json')
-// fs.writeFileSync(path.join(__dirname, '../../package.json'), JSON.stringify({ ...packJson, bin }, null, 2))
+fs.writeFileSync(path.join(__dirname, '../../package.json'), JSON.stringify({ ...packJson, bin }, null, 2))
 
-
-// 生成bin文件
-
-
-
-// 生成src/cli文件

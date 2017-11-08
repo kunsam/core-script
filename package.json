@@ -15,7 +15,8 @@
     "publish:patch": "npm version patch && npm publish",
     "publish:minor": "npm version minor && npm publish",
     "dot": "NODE_ENV=node babel-node src/cli/create-snippet.js",
-    "update-cli": "NODE_ENV=node babel-node scripts/bin/update-cli.js"
+    "update-cli": "NODE_ENV=node babel-node scripts/bin/update-cli.js",
+    "test-cli": "NODE_ENV=node babel-node scripts/bin/test-cli.js"
   },
   "author": "kunsam",
   "license": "MIT",
@@ -49,6 +50,8 @@
   "bin": {
     "CORE-check-assist-center": "bin/core-check-assist-center.js",
     "CORE-cac": "bin/core-check-assist-center.js",
+    "CORE-check-project-framework": "bin/core-check-project-framework.js",
+    "CORE-cprfr": "bin/core-check-project-framework.js",
     "CORE-init-core": "bin/core-init-core.js",
     "CORE-icr": "bin/core-init-core.js",
     "CORE-open-project-faster": "bin/core-open-project-faster.js",
@@ -67,8 +70,8 @@
     "CORE-crsn": "bin/core-create-snippet.js",
     "CORE-delete-snippet": "bin/core-delete-snippet.js",
     "CORE-dlsn": "bin/core-delete-snippet.js",
-    "CORE-set-snippet": "bin/core-set-snippet.js",
-    "CORE-slsn": "bin/core-set-snippet.js",
+    "CORE-select-snippet": "bin/core-select-snippet.js",
+    "CORE-slsn": "bin/core-select-snippet.js",
     "CORE-create-rest-api-redux-flow": "bin/core-create-rest-api-redux-flow.js",
     "CORE-crarf": "bin/core-create-rest-api-redux-flow.js",
     "CORE-create-graphql-api": "bin/core-create-graphql-api.js",
