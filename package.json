@@ -48,6 +48,8 @@
     "recompose": "^0.26.0"
   },
   "bin": {
+    "CORE-check-core": "bin/core-check-core.js",
+    "CORE-ccr": "bin/core-check-core.js",
     "CORE-check-assist-center": "bin/core-check-assist-center.js",
     "CORE-cac": "bin/core-check-assist-center.js",
     "CORE-check-project-framework": "bin/core-check-project-framework.js",

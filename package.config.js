@@ -2,6 +2,7 @@ export default [
   {
     class: '全局帮助类',
     children: [
+      { name: 'check-core', abbr: 'ccr', comment: 'check core info [查看core信息]' },
       { name: 'check-assist-center', abbr: 'cac', comment: 'check guide center [打开引导中心]' },
       { name: 'check-project-framework', abbr: 'cprfr', comment: 'check project framework [查看项目架构目录]' },
     ]

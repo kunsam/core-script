@@ -15,9 +15,9 @@
 
 // todo
 ## 设计开发模型与实例Xmind
-* [脚本相关配置] file://Users/kunsam/Desktop/project/react-project/core/scripts/Xmind/config.js
-* [开发模型与实例编辑] `open /Users/kunsam/Desktop/project/react-project/core/Xmind/develop_model.xmind`
-* [项目评估报表与工作流报表] 在完成开发模型与实例的xmind文件后 运行 `npm run xmind-plan`, `open /Users/kunsam/Desktop/project/react-project/core/Xmind/data` 可查看结果
+* [脚本相关配置] file://Users/kunsam/Desktop/project/react-project/core/.core-config/core.config.js
+* [开发模型与实例编辑] `open /Users/kunsam/Desktop/project/react-project/core/xmind/develop_model.xmind`
+* [项目评估报表与工作流报表] 在完成开发模型与实例的xmind文件后 运行 `core xmind-plan`, `open /Users/kunsam/Desktop/project/react-project/core/xmind/data` 可查看结果
 
 ## 后续开发
 ……
