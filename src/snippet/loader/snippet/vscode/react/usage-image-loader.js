@@ -1,6 +1,6 @@
 
 
-function loader(componentObj, component) {
+function loader({ componentObj, component, filePath }) {
   return {
     prefix: componentObj.snippetPrefix,
     body: [

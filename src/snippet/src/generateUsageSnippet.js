@@ -5,11 +5,13 @@ const find = require('lodash/find')
 const toLower = require('lodash/toLower')
 const escapeRegExp = require('lodash/escapeRegExp')
 import { transform } from 'babel-core';
+import { userInfo } from 'os';
 
 export default function generateUsageSnippet(joinedFiles, config, member) {
   const removeFolder = joinedFiles.filter(file => file.type !== 'folder')
   let memberSnippets = {}
   let members = []
+
   removeFolder.forEach(file => {
     let tmpPath = ''
     let tempCompilePath = ''
@@ -29,6 +31,7 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
           if (typeof(loader) === 'function') { // 过滤掉空文件
             file.absolutePath = path.join(config.projectPath, `./${member.path}/${file.importPath}`)
             let component = { descrition: '该文件非Js文件，没有引入实体', default: null } 
+
             if (file.name.split('.') && file.name.split('.')[1] === 'js') { // js文件引入文件内容
               if (file.importPath) {
                 if (file.name === 'index.js') file.absolutePath = path.join(file.absolutePath, './index.js')
@@ -42,7 +45,6 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                   .replace(/'components\//g, `'${path.join(config.projectPath, 'components')}/`)
                   .replace(/'layouts\//g, `'${path.join(config.projectPath, 'layouts')}/`)
                   .replace(/'hoc\//g, `'${path.join(config.projectPath, 'hoc')}/`)
-
                 tmpPath = path.join(file.absolutePath, '../', `./tmp${Math.random().toFixed(5)}.js`)
                 fs.writeFileSync(tmpPath, resolvePathCode)
                 try {
@@ -54,14 +56,19 @@ export default function generateUsageSnippet(joinedFiles, config, member) {
                   component = {}
                 }
               }
+            } else {
+              // 放在static中的js文件往往没有用,所以除了js都使用
+              if (!(/\.js$/.test(file.name))) {
+                component.default = { displayName: file.importName }
+              }
             }
+
             if (component && component.default) {
               file.root = `${member.path}/`
               // ------------------------------------
               // 补全的快捷键核心定义
               // ------------------------------------
               const componentName = component.default && component.default.displayName
-
               const matchDisplayname = componentName && componentName.match(/\(((\w)*?)\)/g) || ''
               const displayName = matchDisplayname && matchDisplayname.length && matchDisplayname[0].replace(/\(|\)/g, '')  || file.importName
               const memeberShortcut  = member.shortcut || toLower(`${member.path.slice(0, 1)}${member.path.slice(member.path.length - 1)}`)
