@@ -21,11 +21,14 @@ export function analyseWorkflow(workflows) {
 
     if (!difficultyMap[difficulty]) difficultyMap[difficulty] = []
     difficultyMap[difficulty].push(flow)
-    const { min, max, expect } = schedule
-    totalSchedule = {
-      min: totalSchedule.min + min,
-      max: totalSchedule.max + max,
-      expect: totalSchedule.expect + expect,
+
+    if (schedule && schedule.min) {
+      const { min, max, expect } = schedule
+      totalSchedule = {
+        min: totalSchedule.min + min,
+        max: totalSchedule.max + max,
+        expect: totalSchedule.expect + expect,
+      }
     }
     blackHoleFlows = blackHoleFlows.concat(specialFlows)
   })

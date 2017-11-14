@@ -50,6 +50,7 @@ ${specialFlows.map(d => d.node[0] ===  '/' ? `*${d.node.slice(1)}` : `*${d.node}
 
 function getNodeflowsContent(nodeflows) {
   let str = ''
+  nodeflows = nodeflows.filter(flow => flow.time && flow.time.min)
   nodeflows.forEach(({
     node,
     time: { min, max }

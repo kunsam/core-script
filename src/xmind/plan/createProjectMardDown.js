@@ -6,6 +6,7 @@ export function getCountSymbol(length, symbol) {
 }
 
 export function getTimeProcess(time) {
+  if (!time) time = { min: 0, max: 0, expect: 0 }
   const { min, max, expect } = time
   const ratio = ( max - min ) / 30
   const same = min === max
@@ -17,10 +18,11 @@ export function getTimeProcess(time) {
   }
 }
 
+
 export const getTimeBlock = ({ min, max, expect }, schedule) => `￥￥￥
-最少时间: ${min} ${getTimeStr(schedule.min)}
-最大时间: ${max} ${getTimeStr(schedule.max)}
-预期时间: ${expect} ${getTimeStr(schedule.expect)}
+最少时间: ${min} ${getTimeStr(schedule && schedule.min || 0)}
+最大时间: ${max} ${getTimeStr(schedule && schedule.max || 0)}
+预期时间: ${expect} ${getTimeStr(schedule && schedule.expect || 0)}
 ￥￥￥` 
 
 export function createProjectMardDown(projectModel) {
@@ -128,7 +130,10 @@ function getInstanceContent(intances) {
 function getMapContent(aMap) {
   let str = ''
   for (let [key, instances] of Object.entries(aMap)) {
-    const schedule = instances
+
+    const filterInstances = instances.filter(ins => ins.schedule && ins.schedule.expect)
+
+    const schedule = filterInstances
       .reduce((a, { schedule: { min, max, expect }}) => (
         { min: a.min + min, max: a.max + max, expect: a.expect + expect }
       ), { min: 0, max: 0, expect: 0 })
