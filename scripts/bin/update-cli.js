@@ -15,7 +15,9 @@ const srcCliMap = new Map(srcClis.map(bin => ([bin, 1])))
 const whiteList = new Map(CONFIG.bin.whiteList.map(d => ([d, 1])))
 
 
-let bin = {}
+let bin = {
+  'CORE': 'bin/core.js'
+}
 console.log(chalk.white(`>>> 存在的文件将不会被替换，如要更新请删除\n`))
 
 CORE.forEach(data => {

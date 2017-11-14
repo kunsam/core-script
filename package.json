@@ -48,6 +48,7 @@
     "recompose": "^0.26.0"
   },
   "bin": {
+    "CORE": "bin/core.js",
     "CORE-check-core": "bin/core-check-core.js",
     "CORE-ccr": "bin/core-check-core.js",
     "CORE-check-assist-center": "bin/core-check-assist-center.js",
@@ -57,7 +58,7 @@
     "CORE-init-core": "bin/core-init-core.js",
     "CORE-icr": "bin/core-init-core.js",
     "CORE-open-project": "bin/core-open-project.js",
-    "CORE-prfa": "bin/core-open-project.js",
+    "CORE-oppr": "bin/core-open-project.js",
     "CORE-check-project-guide": "bin/core-check-project-guide.js",
     "CORE-cprgd": "bin/core-check-project-guide.js",
     "CORE-xmind-plan": "bin/core-xmind-plan.js",
