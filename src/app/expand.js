@@ -10,14 +10,14 @@ import findImports from 'find-imports'
 import { getFilesTree, joinFilesName } from '../utils/file'
 
 
-export default (basePath, app) => {
-  const containerDir = app.split('/').map(p => {
+export default (basePath, { path, router, designs }) => {
+  const containerDir = path.split('/').map(p => {
     if (p !== 'index.js') return upperFirst(p.split('.')[0])
     return null
   }).filter(a => !!a).join('/')
   let memebers = [
-    `pages/${app}`,
-    `parsers/${app}`,
+    `pages/${path}`,
+    `parsers/${path}`,
     `containers/${containerDir}/index.js`,
     `containers/${containerDir}/index.scss`,
   ]
@@ -41,10 +41,17 @@ export default (basePath, app) => {
   }
   memebers.forEach(data => {
     if (fs.existsSync(path.join(basePath, data))) {
-      shell.exec(`code ${data}`)
+      // shell.exec(`code ${data}`) ！！！！！！！
     } else {
       console.log(chalk.red('>>> 不存在对应的文件!', data, '\n'))
     }
   })
-  console.log(chalk.yellow('Hi ' + app + '!'))
+
+  let chromeShell = `chrome ${router}`
+
+  console.log(designs, chromeShell);
+
+  // shell.exec(`chrome ${path.desi}`)
+
+  console.log(chalk.yellow('Hi ' + path + '!'))
 }
