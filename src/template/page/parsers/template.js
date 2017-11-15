@@ -12,7 +12,7 @@ ${Recompose()}
 // [引入action]
 // import { addCount } from 'actions'
 
-import ${container.key} from 'containers/${container.importPath}' // file:/${container.absolutePath}
+import ${container.key} from '${container.importPath}' // file:/${container.absolutePath}
 
 // [引入selectors】 snippet: ipsl{api.shortcut}r
 // import { fetchGetPostSuccess } from 'selectors/list/fetchGetPost.js'

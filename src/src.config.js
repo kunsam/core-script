@@ -7,6 +7,10 @@ const packJson = require('../package.json')
   // 命令行执行路径
 export const PACKAGE_VERSION = packJson.version
 
-export const PROJECT_BASE_PATH = shell.pwd().stdout
+
+// file://Users/kunsam/Desktop/project/npm/core-script/src/project.config.js
+export const PROJECT_BASE_PATH = '/Users/kunsam/web/core-research' // test
+
+// export const PROJECT_BASE_PATH = shell.pwd().stdout
 
 export const PACKAGE_BASE_PATH =  path.join(__dirname, '../')

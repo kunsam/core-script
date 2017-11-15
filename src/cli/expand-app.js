@@ -14,31 +14,27 @@ import getIp from '../utils/getIp'
 import createPageData from '../project/src/createPageData';
 import getPages from '../utils/getPages';
 
-let projectBasePath = PROJECT_BASE_PATH
-projectBasePath = '/Users/kunsam/web/order-pay-system' // test
-
 let pageData = []
 let port = null
-
 try {
-  port = require(path.join(projectBasePath, 'config.js')).port
+  port = require(path.join(PROJECT_BASE_PATH, 'config.js')).port
 } catch (e) {
   throw Error(chalk.red('项目不存在 config.js'))
 }
 
 try {
   // 没有page-data.js帮项目生成一个
-  if (!fs.existsSync(path.join(projectBasePath, './page-data.js'))) {
+  if (!fs.existsSync(path.join(PROJECT_BASE_PATH, './page-data.js'))) {
     console.log(chalk.yellow(`>>> 不存在pata-data.js 已为您生成`));
-    createPageData(projectBasePath)
+    createPageData(PROJECT_BASE_PATH)
   } else {
-    pageData = require(path.join(projectBasePath, './page-data.js')).pages
+    pageData = require(path.join(PROJECT_BASE_PATH, './page-data.js')).pages
   }
   
 } catch (e) {
   console.log(e);
 }
-const pages = getPages(projectBasePath)
+const pages = getPages(PROJECT_BASE_PATH)
 
 console.log(chalk.magenta('\n-- 可展开的app有:'))
 pages.forEach((file, index) => { console.log(chalk.white(`${index + 1}.${file}`)) })
@@ -56,7 +52,7 @@ const app = {
   designs: _pageData && _pageData.designs || []
 }
 
-expandApp(projectBasePath, app, () => {
+expandApp(PROJECT_BASE_PATH, app, () => {
   console.log(chalk.yellow('Hi ' + choosePage + '!'))
 })
 

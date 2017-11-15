@@ -13,7 +13,7 @@ import { withGraphQlReduxSaga } from 'hoc/store.js'
 
 import WithApiStore from 'hoc/WithApiStore' // file:/${path.join(basePath, 'hoc/WithApiStore/index.js')}
 import AppLayout from 'layouts/AppLayout' // file:/${path.join(basePath, 'layouts/AppLayout/index.js')}
-import ${parser.key} from 'parsers/${parser.importPath}' // file:/${parser.absolutePath}
+import ${parser.key} from '${parser.importPath}' // file:/${parser.absolutePath}
 
 // [container] // file:/${container.absolutePath}
 

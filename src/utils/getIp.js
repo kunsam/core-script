@@ -1,4 +1,4 @@
-export default () => {
+export default function getIp () {
   var os = require('os');
   var interfaces = os.networkInterfaces();
   var IPv4 = '127.0.0.1';

@@ -1,5 +1,5 @@
 // 在这配置所有管理项目
-export default [
+const projects = [
   {
     name: 'core-script (core脚本项目)',
     path: '/Users/kunsam/Desktop/project/npm/core-script'
@@ -25,3 +25,5 @@ export default [
     path: '/Users/kunsam/web/core-manager-server'
   }
 ]
+
+export default projects

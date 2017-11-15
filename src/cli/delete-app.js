@@ -9,6 +9,7 @@ import loopInput from '../app/src/loopInput'
 import { PROJECT_BASE_PATH } from '../src.config'
 
 import { getFilesTree, joinFilesName } from '../utils/file'
+import { getRemovePath } from '../utils/path';
 
 const apps = joinFilesName(getFilesTree(path.join(PROJECT_BASE_PATH, 'pages')))
 
@@ -61,7 +62,7 @@ function removeApp(app, appPath) {
         key === 'container' && moveLogger(path.join(PROJECT_BASE_PATH, value.importPath, 'index.scss'))
         moveLogger(removePath)
       } else {
-        moveLogger(path.join(PROJECT_BASE_PATH, `${key}s`, appPath.split('/')[0]))
+        moveLogger(getRemovePath(removePath))
       }
     }
   }
