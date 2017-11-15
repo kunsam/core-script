@@ -8,7 +8,7 @@ const BACK = 'back_access' // 后期运算时插入，只要存在target的均�
 const CLIENT = 'client_jump_access'
 
 // 未来加管理字段？比如插入关联组件，接入的api
-export default [
+const pages = [
 
   // 可以抽出简单部分（或者叫产品配置部分）但是普通人配置可能会把可能是相同页面分成不同的页面
   // 这些配置抽成不同的路由配置？
@@ -154,9 +154,7 @@ export default [
     name: '订单评价页',
     page: 'comment/order.js',
     designs: [
-      'https://app.zeplin.io/project/599ff2ad5b010e07714668fb/screen/5a05580713270c63fec92a87', // 预购成功
-      'https://app.zeplin.io/project/599ff2ad5b010e07714668fb/screen/5a05589da3f23603038d8297', // 额外支付成功
-      'https://app.zeplin.io/project/599ff2ad5b010e07714668fb/screen/5a0558da00a65e71aca7cb23', // 交易成功页
+
     ],
     state: TODO,
     desc: '支付结束后结果反馈页面',
@@ -258,6 +256,7 @@ export default [
     page: 'order/list.js',
     designs: [
       'https://app.zeplin.io/project/599ff2ad5b010e07714668fb/screen/5a0558be039546d8b619edc0',
+      'https://app.zeplin.io/project/599ff2ad5b010e07714668fb/screen/5a0558bd07a34d3f17e057d6' // 订单缺省页
     ],
     state: TODO,
     desc: '用于裁剪图片，图片裁剪器还需要再优化下',
@@ -276,7 +275,6 @@ export default [
     page: 'order/item.js',
     designs: [
       'https://app.zeplin.io/project/599ff2ad5b010e07714668fb/screen/5a0558be039546d8b619edc0',
-      'https://app.zeplin.io/project/599ff2ad5b010e07714668fb/screen/5a0558bd07a34d3f17e057d6' // 订单缺省页
     ],
     state: TODO,
     desc: '显示所有订单',
@@ -294,8 +292,7 @@ export default [
 
 
 
-
-export const components= [
+const components= [
   {
     name: '3d轮播图',
     path: '3dBookCarousel',
@@ -303,3 +300,8 @@ export const components= [
     desc: '3d轮播选择对象'
   }
 ]
+
+module.exports = {
+  pages,
+  components
+}

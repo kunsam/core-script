@@ -11,9 +11,11 @@ import { getPagePath } from '../utils/path'
 import expandApp from '../app/expand'
 import { PROJECT_BASE_PATH, PACKAGE_BASE_PATH } from '../src.config'
 import getIp from '../utils/getIp'
+import createPageData from '../project/src/createPageData';
+import getPages from '../utils/getPages';
 
 let projectBasePath = PROJECT_BASE_PATH
-// projectBasePath = '/Users/kunsam/web/order-pay-system' // test
+projectBasePath = '/Users/kunsam/web/order-pay-system' // test
 
 let pageData = []
 let port = null
@@ -25,22 +27,26 @@ try {
 }
 
 try {
-  pageData = require(path.join(projectBasePath, './page-data.js')).pages
+  // 没有page-data.js帮项目生成一个
+  if (!fs.existsSync(path.join(projectBasePath, './page-data.js'))) {
+    console.log(chalk.yellow(`>>> 不存在pata-data.js 已为您生成`));
+    createPageData(projectBasePath)
+  } else {
+    pageData = require(path.join(projectBasePath, './page-data.js')).pages
+  }
+  
 } catch (e) {
   console.log(e);
 }
-
-const joinedFiles = joinFilesName(getFilesTree(path.join(projectBasePath, 'pages')))
-  .map(file => file.fullImportPath).filter(file => file.split('/').length > 1)
-
+const pages = getPages(projectBasePath)
 
 console.log(chalk.magenta('\n-- 可展开的app有:'))
-joinedFiles.forEach((file, index) => { console.log(chalk.white(`${index + 1}.${file}`)) })
+pages.forEach((file, index) => { console.log(chalk.white(`${index + 1}.${file}`)) })
 
 const appIndex = getAppIndex()
 const ipaddress = getIp()
 
-const choosePage = joinedFiles[appIndex - 1] 
+const choosePage = pages[appIndex - 1] 
 
 const _pageData = find(pageData, page => getPagePath(page.page) === getPagePath(choosePage))
 

@@ -1,3 +1,4 @@
+// 在这配置所有管理项目
 export default [
   {
     name: 'core-script (core脚本项目)',
