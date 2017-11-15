@@ -5,7 +5,7 @@ import chalk from 'chalk'
 commander
   .version(PACKAGE_VERSION);
 
-import CORE from '../../package.config'
+import CORE from '../package.config'
 
 CORE.forEach(c => {
   const sortName = c.children.sort((a,b) => (a.name.length - b.name.length))

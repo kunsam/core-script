@@ -9,7 +9,7 @@ export const PACKAGE_VERSION = packJson.version
 
 
 // file://Users/kunsam/Desktop/project/npm/core-script/src/project.config.js
-export const PROJECT_BASE_PATH = '/Users/kunsam/web/core-research' // test
+export const PROJECT_BASE_PATH = '/Users/kunsam/web/core-manager' // test
 
 // export const PROJECT_BASE_PATH = shell.pwd().stdout
 

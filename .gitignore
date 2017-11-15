@@ -5,5 +5,4 @@ xmind/*
 .assist/*
 components/*
 core/*
-package.config.js
 scripts/*

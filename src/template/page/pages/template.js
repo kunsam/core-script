@@ -47,6 +47,7 @@ ${page.key}.getInitialProps = async (props) => {
   // }
 
   return {
+    // serverDispath: ['fetchGetComments'],
     ...WithEnv(props)
   }
 }

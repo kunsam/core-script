@@ -1,7 +1,7 @@
 import fs from 'fs-extra'
 import path from 'path'
 import chalk from 'chalk'
-import CORE from '../../package.config'
+import CORE from '../../src/package.config'
 import CONFIG from './config'
 
 const basePath = path.join(__dirname, '../../')

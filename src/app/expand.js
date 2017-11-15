@@ -23,6 +23,9 @@ export default (basePath, { path, router, designs }, callback) => {
     `containers/${containerDir}/index.scss`,
   ]
   var componentExpand = readlineSync.question('是否展开依赖元件?(y/n[回车默认])')
+  var isChrome = readlineSync.question('是否打开浏览器（include router and design）?(y[回车默认]/n)')
+
+  
   if (componentExpand && componentExpand === 'y') {
     const imports = findImports(nodepath.join(basePath, `containers/${containerDir}/index.js`), {
       flatten: true,
@@ -49,7 +52,7 @@ export default (basePath, { path, router, designs }, callback) => {
   })
 
   const NO = { no: 1, No: 1, NO: 1 }
-  var isChrome = readlineSync.question('是否打开浏览器（include router and design）?(y[回车默认]/n)')
+
   if (!NO[isChrome]) {
     let routeSplit = router.split('/')
     const lastKey = routeSplit[routeSplit.length - 1]

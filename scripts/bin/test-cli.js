@@ -1,5 +1,5 @@
 
-import CORE from '../../package.config'
+import CORE from '../../src/package.config'
 import chalk from 'chalk'
 var readlineSync = require('readline-sync')
 var shell = require('shelljs')

@@ -41,7 +41,9 @@ SinglePage.getInitialProps = (props) => {
   //   }))
   // }
 
+  // 服务端调用的api要传入Key以正确的更新状态
   return {
+    // serverDispath: ['fetchGetComments'],
     ...WithEnv(props)
   }
 }
