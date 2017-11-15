@@ -1,19 +1,14 @@
 
-// $快速打开项目 [创建配置文件]（选择后可以超链接进行配置）
+// $open project faster 开发某个项目(项目列表需要配置)
+
 var fs = require('fs')
 var path = require('path')
 var chalk = require('chalk')
 var shell = require('shelljs')
 
 import { PROJECT_BASE_PATH } from '../src.config'
+import projects from '../project.config'
 import loopInput from '../app/src/loopInput'
-
-const userConfigPath = path.join(PROJECT_BASE_PATH, '.core-config/core.config.js')
-if (!fs.existsSync(userConfigPath)) throw Error('请在项目根路径下配置.core-config/core.config.js 或使用 init-core')
-const userConfig = require(userConfigPath)
-const { projects } = userConfig
-
-if (!projects) throw Error(`不存在projects配置，请添加 ${userConfigPath}`)
 
 console.log(chalk.magenta(`-- [项目]:`))
 projects

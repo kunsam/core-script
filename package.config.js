@@ -5,14 +5,16 @@ export default [
       { name: 'check-core', abbr: 'ccr', comment: 'check core info [查看core信息]' },
       { name: 'check-assist-center', abbr: 'cac', comment: 'check guide center [打开引导中心]' },
       { name: 'check-project-framework', abbr: 'cprfr', comment: 'check project framework [查看项目架构目录]' },
+      { name: 'code-project', abbr: 'cdpr', comment: 'open project faster 开发某个项目(项目列表需要配置)' },
+      { name: 'config-projects', abbr: 'cfprs', comment: 'config working projects 配置需要管理的项目' },
     ]
   },
   {
     class: '项目类',
     children: [
       { name: 'init-core', abbr: 'icr', comment: 'create core.config.js [创建配置文件]' },
-      { name: 'open-project', abbr: 'oppr', comment: 'open project faster 快速打开项目(需要进行配置)' },
       { name: 'check-project-guide', abbr: 'cprgd', comment: 'check the guide of develop project [查看项目引导] 引导中心的子类' },
+      { name: 'check-project-backend', abbr: 'cprbe', comment: 'check project management backend 打开项目管理后台' },
       { name: 'xmind-plan', abbr: 'xplan', comment: 'generates project plan files from xmind tree [根据xmind创建项目评估表和工作流表]' }
     ]
   },
