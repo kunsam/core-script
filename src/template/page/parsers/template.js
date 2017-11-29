@@ -8,6 +8,8 @@ export default ({ basePath, page, parser, container }) => {
 `
 ${PropTypes()}
 ${Basic()}
+import { connect } from 'react-redux'
+import { createSelector } from 'reselect'
 ${Recompose()}
 // [引入action]
 // import { addCount } from 'actions'

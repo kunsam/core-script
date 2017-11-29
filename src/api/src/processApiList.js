@@ -4,10 +4,12 @@ export default function processApiList(data, authField) {
   const originApiList = data.map(api => {
     let formData = api.parameters.formData || []
     if (api.needAuth) {
-      formData = formData.concat([
-        { key: authField.userId, require: true },
-        { key: authField.userToken, require: true }
-      ])
+
+      //   获得用户权限暂时移位到调用方法中
+      // formData = formData.concat([
+      //   { key: authField.userId, require: true },
+      //   { key: authField.userToken, require: true }
+      // ])
     }
     if (formData.length) api.parameters.formData = formData
     return api // es6 才能用 return { ...data, formData } 

@@ -1,0 +1,18 @@
+{
+  "import dispatch fetchData": 1,
+  "dispatch fetchPostBookAlbum": 1,
+  "import selector fetchPostBookAlbum": 1,
+  "fetchPostBookAlbum whether fetch Success": 1,
+  "dispatch fetchPostBooks": 1,
+  "import selector fetchPostBooks": 1,
+  "fetchPostBooks whether fetch Success": 1,
+  "dispatch fetchPostBookWeibo": 1,
+  "import selector fetchPostBookWeibo": 1,
+  "fetchPostBookWeibo whether fetch Success": 1,
+  "dispatch fetchPostBookWeiboSubmit": 1,
+  "import selector fetchPostBookWeiboSubmit": 1,
+  "fetchPostBookWeiboSubmit whether fetch Success": 1,
+  "dispatch fetchPostBookPageWeibo": 1,
+  "import selector fetchPostBookPageWeibo": 1,
+  "fetchPostBookPageWeibo whether fetch Success": 1
+}

@@ -38,6 +38,7 @@ const DynamicComponentWithCustomLoading = dynamic(
     loading: () => (<p>...</p>)
   }
 )
+
 const DynamicComponentWithNoSSR = dynamic(
   import('../components/hello3'),
   { ssr: false }

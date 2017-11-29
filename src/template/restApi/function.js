@@ -18,6 +18,7 @@ export default function createApiFunction(api) {
   const bodyName = bodyPayload ? 'bodyPayload' : 'payload'
   return (`
   ${apiFunction}
+  ${createApiAuth(api.needAuth, bodyName)}
   return xFetch({
     query: ${createApiQuery(api.parameters.query || [])}
     url: ${createApiUrl(api.path)},
@@ -27,6 +28,17 @@ export default function createApiFunction(api) {
 }`)
 
 }
+
+// 这个后来加的
+function createApiAuth(needAuth, bodyName) {
+  if (!needAuth) return ''
+  return `
+  const { user_id, token } = getUserAuth()
+  ${bodyName}['user_id'] = user_id
+  ${bodyName}['access_token'] = token
+`
+}
+
 
 function createApiUrl(apiPath) {
   return '`' + apiPath.replace(/{/g, "${") + '`'

@@ -7,7 +7,27 @@ import Link from 'next/link'
 
 // https://github.com/zeit/next.js#prefetching-pages
 
-// <Link href={{ pathname: '/about', query: { name: 'Zeit' }}}
+<Link prefetch href="/about"></Link>
+
+<Link href={{ pathname: '/about', query: { name: 'Zeit' }}}></Link>
+
+
+<a onClick={() => setTimeout(() => url.pushTo('/dynamic'), 100)}>
+A route transition will happen after 100ms
+</a>
+{// but we can prefetch it!
+Router.prefetch('/dynamic')}
+
+// 弹窗类型用这个
+// Shallow routing allows you to change the URL without running getInitialProps. You'll receive the updated pathname and the query via the url prop of the same page that's loaded, without losing state
+// Shallow Routing 
+// 这个可以去看一下
+Router.push(href, as, { shallow: true })
+
+Router.push({
+  pathname: '/about',
+  query: { name: 'Zeit' }
+})
 
 // props: replace prefetch href
 

@@ -1,6 +1,0 @@
-{
-  "import dispatch fetchData": 1,
-  "dispatch fetchGetFlow": 1,
-  "import selector fetchGetFlow": 1,
-  "fetchGetFlow whether fetch Success": 1
-}
