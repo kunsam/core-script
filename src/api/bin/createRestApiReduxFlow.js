@@ -21,16 +21,18 @@ export default (basePath) => {
     console.log(chalk.yellow('>> 使用 [mockData] 导出'))
     createApiReduxFlow(config.mockData, config, basePath)
   } else {
-    fetch(config.src)
-    .then( r => r ) // .json() )
-    .then( data => {
-      if (data && data.length) {
-        console.log(chalk.yellow('>> 请求数据正确，开始导出 \n'));
-        console.log(data);
-        createApiReduxFlow(data, config, basePath)
-      } else {
-        throw Error('请求数据出错，请检查')
-      }
+    fetch(config.src).then(res => {
+      res.json().then(data => {
+        console.log(data,' sadsadasdasdasdsadasdas');
+      })
+  
+      // if (data && data.length) {
+      //   console.log(chalk.yellow('>> 请求数据正确，开始导出 \n'));
+      //   console.log(data);
+      //   createApiReduxFlow(data, config, basePath)
+      // } else {
+      //   throw Error('请求数据出错，请检查')
+      // }
     })
   }
 }
@@ -57,14 +59,14 @@ function generateApiList(apiList, outputPath, basePath) {
   const origin = fs.readdirSync(apiOutputDir)
   origin.forEach(fileName => {
     if (!find(apiFiles, api => `${api.key}.js` === fileName)) {
-      console.log(chalk.cyan(`[generateApiList] ${fileName}在api列表中不存在，将删除该文件`));
+      // console.log(chalk.cyan(`[generateApiList] ${fileName}在api列表中不存在，将删除该文件`));
       fs.unlinkSync(path.join(apiOutputDir, fileName))
     }
   })
   apiFiles.forEach(api => {
     const filePath = path.join(apiOutputDir, `${api.key}.js`)
     if (fs.existsSync(filePath)) {
-      console.log(chalk.red(`[generateApiList] ${api.key}.js已存在，如要更新请删除该文件`));
+      // console.log(chalk.red(`[generateApiList] ${api.key}.js已存在，如要更新请删除该文件`));
     } else {
       ensureWrite(filePath, api.file)
     }
@@ -120,19 +122,19 @@ function generateApiRedux(apiList, config, basePath) {
     const sagafilePath = path.join(sagaListDir, `${api.key}.js`)
     const selectorfilePath = path.join(selectorListDir, `${api.key}.js`)
     if (fs.existsSync(actionfilePath)) {
-      console.log(chalk.red(`${actionfilePath}已存在，如要更新请删除该文件\n`));
+      // console.log(chalk.red(`${actionfilePath}已存在，如要更新请删除该文件\n`));
     } else {
       ensureWrite(actionfilePath, acion)
     }
 
     if (fs.existsSync(sagafilePath)) {
-      console.log(chalk.red(`[saga] ${sagafilePath}已存在，如要更新请删除该文件\n`));
+      // console.log(chalk.red(`[saga] ${sagafilePath}已存在，如要更新请删除该文件\n`));
     } else {
       ensureWrite(sagafilePath, saga)
     }
 
     if (fs.existsSync(selectorfilePath)) {
-      console.log(chalk.red(`${selectorfilePath}已存在，如要更新请删除该文件\n`));
+      // console.log(chalk.red(`${selectorfilePath}已存在，如要更新请删除该文件\n`));
     } else {
       ensureWrite(selectorfilePath, selector)
     }
