@@ -2,15 +2,7 @@
   "env": {
     "node": {
       "presets": ["latest", "es2017", "stage-3", "react"],
-      "plugins": [
-        // [
-        //   "babel-plugin-transform-require-ignore",
-        //   {
-        //     "extensions": [".less", ".scss", ".jpg", ".png", "mp4", ".svg", ".css"]
-        //   }
-        // ],
-        // "babel-plugin-transform-async-to-generator"
-      ]
+      "plugins": []
     }
   },
 	"presets": ["latest", "es2017", "stage-3", "react"],

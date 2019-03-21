@@ -6,8 +6,6 @@ export default ({ basePath, container, parser, page }) => {
   return (
 `
 ${Head({ basePath, key: container.key })}
-// [page] // file:/${page.absolutePath}
-// [parser] // file:/${parser.absolutePath}
 ${Container({ key: container.key })}
 `)
 }

@@ -6,15 +6,14 @@ import Next from './npm/next'
 import Recompose from './npm/recompose'
 import Sinppet from './common/snippet'
 
+// ${PropTypes()}
+// ${Sinppet()}
 export default ({ basePath, key }) => {
   return (
-`import React from 'react'
-${PropTypes()}
-${Basic()}
+`${Basic()}
 ${Antd()}
 ${Next()}
 ${Recompose()}
-${Sinppet()}
 `)
 }
 
